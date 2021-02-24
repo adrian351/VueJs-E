@@ -16,7 +16,7 @@
                 <a class="list-item">Reviews (1)</a>
             </v-tab>
             <v-tab :ripple="false" tag="li">
-                <a class="list-item">Questions and Answers</a>
+                <a class="list-item">Preguntas and Answers</a>
             </v-tab>
             <v-tab :ripple="false" tag="li">
                 <a class="list-item">More Offers</a>
