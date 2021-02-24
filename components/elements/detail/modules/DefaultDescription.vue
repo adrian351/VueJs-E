@@ -5,7 +5,7 @@
                 <a class="list-item">Description</a>
             </v-tab>
             <v-tab :ripple="false" tag="li">
-                <a class="list-item">Specification</a>
+                <a class="list-item">Specificacion</a>
             </v-tab>
             <v-tab :ripple="false" tag="li">
                 <a class="list-item">
