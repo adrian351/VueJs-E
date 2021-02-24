@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="ps-loading--progress">
-        <i>Loading...</i>
+        <i>Cargando...</i>
         <v-progress-linear indeterminate color="yellow darken-2" />
     </div>
 </template>
