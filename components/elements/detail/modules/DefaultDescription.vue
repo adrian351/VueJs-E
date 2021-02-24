@@ -13,7 +13,7 @@
                 </a>
             </v-tab>
             <v-tab :ripple="false" tag="li">
-                <a class="list-item">Reviews (1)</a>
+                <a class="list-item">Reproducciones (1)</a>
             </v-tab>
             <v-tab :ripple="false" tag="li">
                 <a class="list-item">Questions and Answers</a>
