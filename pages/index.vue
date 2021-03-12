@@ -2,10 +2,15 @@
     <main id="homepage-1">
         <home-banner />
         <site-feautures-fullwidth />
-        <home-default-deal-of-day
+        <armar-canasta/>
+        
+        <product-filter/>
+        
+          <home-default-deal-of-day
             v-if="collections !== null"
             collection-slug="deal-of-the-day"
         />
+        
         <home-ads-columns />
         <home-default-top-categories />
         <template v-if="collections !== null">
@@ -13,8 +18,9 @@
             <clothings collection-slug="clothings" />
             <garden-and-kitchen collection-slug="garden-and-kitchen" />
         </template>
+        
         <home-ads />
-        <download-app />
+        
         <new-arrivals
             v-if="collections !== null"
             collection-slug="new-arrivals-products"
@@ -24,7 +30,7 @@
 </template>
 <script>
 import { mapState } from 'vuex';
-import DownloadApp from '~/components/partials/commons/DownloadApp';
+// import DownloadApp from '~/components/partials/commons/DownloadApp';
 import FooterFullwidth from '~/components/shared/footers/FooterFullwidth';
 import Newsletters from '~/components/partials/commons/Newsletters';
 import SiteFeauturesFullwidth from '~/components/partials/commons/SiteFeauturesFullwidth';
@@ -42,6 +48,8 @@ import HeaderMobile from '~/components/shared/mobile/HeaderMobile';
 import MobileDrawer from '~/components/shared/mobile/MobileDrawer';
 import HomeDefaultDealOfDay from '~/components/partials/homepage/default/HomeDefaultDealOfDay';
 import DemoPanel from '~/components/shared/DemoPanel';
+import ArmarCanasta from '~/components/partials/homepage/default/ArmarCanasta';
+import ProductFilter from '~/components/partials/homepage/default/ProductFilter';
 
 export default {
     components: {
@@ -57,12 +65,14 @@ export default {
         SiteFeauturesFullwidth,
         HomeAds,
         FooterFullwidth,
-        DownloadApp,
+        // DownloadApp,
         Newsletters,
         NewArrivals,
         HomeDefaultTopCategories,
         Clothings,
-        ConumerElectronics
+        ConumerElectronics,
+        ArmarCanasta,
+        ProductFilter
     },
 
     transition: 'zoom',
@@ -76,11 +86,13 @@ export default {
 
     async created() {
         const queries = [
+            
             'deal-of-the-day',
             'consumer-electronics',
             'clothings',
             'garden-and-kitchen',
-            'new-arrivals-products'
+            'new-arrivals-products',
+            
         ];
         await this.$store.dispatch('collection/getCollectionsBySlugs', queries);
     }
