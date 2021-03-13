@@ -3,7 +3,7 @@
         <home-banner />
         <site-feautures-fullwidth />
         <armar-canasta/>
-        
+        <p>celimine algunos archivos</p>
         <product-filter/>
         
           <home-default-deal-of-day
