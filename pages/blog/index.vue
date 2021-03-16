@@ -2,7 +2,7 @@
     <div class="ps-page--blog">
         <div class="container">
             <div class="ps-page__header">
-                <h1>Our Press</h1>
+                <h1>Our Press elimine archivso</h1>
                 <bread-crumb2 :breadcrumb="breadCrumb" />
             </div>
             <blog-grid />
