@@ -27,6 +27,7 @@
 <script>
 import FormCheckoutInformation from '~/components/partials/account/modules/FormCheckoutInformation';
 import ModuleOrderSummary from '~/components/partials/account/modules/ModuleOrderSummary';
+
 export default {
     name: 'Checkout',
     components: { ModuleOrderSummary, FormCheckoutInformation }

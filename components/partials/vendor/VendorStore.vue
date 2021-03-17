@@ -10,13 +10,7 @@
                         <div class="ps-block__left">
                             <ul>
                                 <li class="active">
-                                    <a href="#">Products</a>
-                                </li>
-                                <li>
-                                    <a href="#">Reviews</a>
-                                </li>
-                                <li>
-                                    <a href="#">About</a>
+                                    <a href="#">Productos</a>
                                 </li>
                             </ul>
                         </div>
@@ -29,17 +23,19 @@
                                 <input
                                     class="form-control"
                                     type="text"
-                                    placeholder="Search in this shop"
+                                    placeholder="Buscar"
                                 />
                                 <button>
                                     <i class="fa fa-search"></i>
                                 </button>
                             </form>
+                        
                         </div>
                     </div>
+                   
                     <div class="ps-vendor-best-seller">
                         <div class="ps-section__header">
-                            <h3>Best Seller items</h3>
+                            <h3>Personalizando canasta</h3>
                             <div class="ps-section__nav">
                                 <a class="ps-carousel__prev">
                                     <i class="icon-chevron-left"></i>
@@ -81,6 +77,8 @@ import { relatedProduct } from '~/static/data/product.json';
 import VendorProducts from './modules/VendorProducts';
 
 export default {
+
+
     name: 'VendorStore',
     components: { VendorProducts, VendorProfile, ProductDefault },
     data() {

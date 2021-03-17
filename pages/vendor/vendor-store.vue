@@ -13,6 +13,7 @@ export default {
     components: {
         BreadCrumb,
         VendorStore
+        
     },
 
     data: () => {
@@ -23,7 +24,7 @@ export default {
                     url: '/'
                 },
                 {
-                    text: 'Vendor store'
+                    text: 'Mi canasta'
                 }
             ]
         };

@@ -16,7 +16,7 @@
                     <option>Sort by price: high to low</option>
                 </select>
                 <div class="ps-shopping__view">
-                    <p>View</p>
+                    <p>Vista</p>
                     <ul class="ps-tab-list">
                         <li :class="gridMode === true ? 'active' : ''">
                             <a href="#">
@@ -39,13 +39,22 @@
                         v-for="product in products"
                         class="col-lg-3 col-md-4 col-sm-6 col-6 "
                         :key="product.id"
-                    >
-                        <ProductDefault :product="product" />
+                        >
+                        <ProductDefault :product="product"  />
+
+                        <a
+                            class="ps-btn"
+                            href="#"
+                            @click.prevent="
+                            handleAddToArcon(product)"
+                            >
+                            Agregar
+                        </a>
                     </div>
                 </div>
             </div>
             <div v-else class="ps-shopping-product">
-                <!--<ProductWide product="{product}" key="{product.id}" />-->
+                <ProductWide product="{product}" key="{product.id}" />
             </div>
         </div>
     </div>
@@ -62,6 +71,22 @@ export default {
             gridMode: true,
             products: relatedProduct
         };
+    },
+
+    methods:{
+        handleAddToArcon(product){
+            let item = {
+                id: product.id,
+                quantity: 1,
+                price: product.price
+            };
+            this.$store.dispatch('cart/addProductToArcon', item);
+            this.$notify({
+                group: 'addCartSuccess',
+                title: 'Success!',
+                text: `${product.title} |se ah agregado a tu canasta!`
+            }); 
+        }
     }
 };
 </script>
