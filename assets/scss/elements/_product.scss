@@ -58,15 +58,16 @@
     .ps-product__actions {
         display: flex;
         flex-flow: row nowrap;
+        align-content: center;
         justify-content: center;
         align-items: center;
         width: 100%;
-        padding: 10px 0;
-        background-color: #fff;
-        transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1) 0s;
+        padding: 15px 0;
+        background-color: rgb(248, 245, 245);
+        transition: all 1s cubic-bezier(0.7, 0, 0.3, 1) 0s;
 
         li {
-            margin-right: 10px;
+            margin-right: 5px;
 
             a {
                 display: flex;
@@ -96,14 +97,14 @@
         font-size: 12px;
         color: #000;
         text-transform: uppercase;
-        border-bottom: 1px solid #e1e1e1;
+        border-bottom: 3px solid #070707;
     }
 
     .ps-product__badge {
         position: absolute;
         top: 0;
         right: 0;
-        color: #fff;
+        color: rgb(208, 246, 250);
         font-size: 14px;
         font-weight: 600;
         line-height: 20px;
@@ -128,7 +129,7 @@
         line-height: 1.2em;
         padding-bottom: 5px;
         padding-left: 0;
-        color: #06c;
+        color: rgb(13, 13, 14);
         --max-lines: 2;
         max-height: calc(1.2em * var(--max-lines));
         overflow: hidden;
@@ -172,7 +173,7 @@
             position: absolute;
             bottom: 0;
             left: 50%;
-            @include transform(translate(-50%, 100%));
+            @include transform(translate(50%, 100%));
         }
     }
 
@@ -187,11 +188,13 @@
             top: 100%;
             right: -1px;
             width: calc(100% + 2px);
-            padding: 0 20px 20px;
-            border: 1px solid silver;
+            padding: 60px 20px 20px;
+            border: 1px solid rgb(192, 192, 192);
             border-top: none;
             @include hidden;
         }
+
+        
     }
 
     .ps-product__container {

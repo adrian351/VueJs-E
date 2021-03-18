@@ -48,7 +48,7 @@
                             @click.prevent="
                             handleAddToArcon(product)"
                             >
-                            Agregar
+                            Agregar a canasta
                         </a>
                     </div>
                 </div>
