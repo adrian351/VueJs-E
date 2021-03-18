@@ -38,8 +38,8 @@ export default {
     }
 
     a:hover{
-        color:#f2f6f8;
-        background-color: #17a71e;
+        color:#fcb800;
+        background-color: #0d0f0d;
        
     
 }

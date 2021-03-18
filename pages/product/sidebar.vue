@@ -30,19 +30,12 @@ import BreadCrumb from '~/components/elements/BreadCrumb';
 import CustomerBought from '~/components/partials/product/CustomerBought';
 import RelatedProduct from '~/components/partials/product/RelatedProduct';
 import ProductWidgets from '~/components/partials/product/ProductWidgets';
-import ProductDetailCountDown from '~/components/elements/detail/ProductDetailCountdown';
-import ProductDetailGroupped from '~/components/elements/detail/ProductDetailGroupped';
-import ProductOnsalePage from '~/pages/product/on-sale';
-import ProductDetailOnSale from '~/components/elements/detail/ProductDetailOnSale';
 import ProductDetailSidebar from '~/components/elements/detail/ProductDetailSidebar';
 export default {
     transition: 'zoom',
     components: {
         ProductDetailSidebar,
-        ProductDetailOnSale,
         ProductOnsalePage,
-        ProductDetailGroupped,
-        ProductDetailCountDown,
         ProductWidgets,
         RelatedProduct,
         CustomerBought,

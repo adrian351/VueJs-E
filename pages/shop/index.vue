@@ -4,7 +4,7 @@
         <div class="ps-container">
             <shop-banner />
             <shop-brands />
-            <shop-categories />
+            <!-- <shop-categories /> -->
             <div class="ps-layout--shop">
                 <div class="ps-layout__left">
                     <shop-widget v-if="widgetLoading === false" />

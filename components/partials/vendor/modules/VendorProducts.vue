@@ -77,8 +77,8 @@ export default {
         handleAddToArcon(product){
             let item = {
                 id: product.id,
-                quantity: 1,
-                price: product.price
+                
+                
             };
             this.$store.dispatch('cart/addProductToArcon', item);
             this.$notify({

@@ -1,5 +1,12 @@
 <template lang="html">
     <div id="shop-widgets">
+        <!-- <div class="widget-fliter">
+                <a 
+                    title="filtrar"
+                >
+                    <i class="icon-filter"></i> Filtrar   
+                </a>
+        </div> -->
         <aside class="widget widget_shop">
             <h4 class="widget-title">
                 {{ $t('shop.widget.categories') }}
@@ -36,7 +43,7 @@
             </figure>
             <figure>
                 <h4 class="widget-title">
-                    {{ $t('shop.widget.byBrands') }}
+                    {{ $t('shop.widget.byPrice') }}
                 </h4>
                 <v-range-slider
                     v-model="priceRange"
@@ -47,7 +54,7 @@
                     @end="handleFilterByPriceRagne"
                 />
                 <p>
-                    Price: ${{ priceRange[0].toFixed(2) }} - ${{
+                    Precio: ${{ priceRange[0].toFixed(2) }} - ${{
                         priceRange[1].toFixed(2)
                     }}
                 </p>

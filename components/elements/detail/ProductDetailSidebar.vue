@@ -13,9 +13,6 @@ import DefaultDescription from '~/components/elements/detail/modules/DefaultDesc
 import InformationDefault from '~/components/elements/detail/information/InformationDefault';
 import ThumbnailDefault from '~/components/elements/detail/thumbnail/ThumbnailDefault';
 import { countdown } from '~/static/data/product';
-import ThumbnailCountDown from '~/components/elements/detail/thumbnail/ThumbnailCountDown';
-import InformationGroupped from '~/components/elements/detail/information/InformationGroupped';
-import InformationOnSale from '~/components/elements/detail/information/InformationOnSale';
 import ThumbnailSidebar from '~/components/elements/detail/thumbnail/ThumbnailSidebar';
 import InformationSidebar from '~/components/elements/detail/information/InformationSidebar';
 export default {
@@ -23,8 +20,6 @@ export default {
     components: {
         InformationSidebar,
         ThumbnailSidebar,
-        InformationOnSale,
-        ThumbnailCountDown,
         DefaultDescription
     },
     computed: {

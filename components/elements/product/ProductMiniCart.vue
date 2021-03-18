@@ -20,7 +20,7 @@
                 {{ product.title }}
             </nuxt-link>
             <p>
-                <strong>Sold by:</strong>
+                <strong>Vendidos:</strong>
                 {{ product.vendor }}
             </p>
             <small v-if="quantity !== null">

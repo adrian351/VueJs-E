@@ -14,7 +14,7 @@
                         to="#"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Add to cart"
+                        title="Agregar a carrito"
                         @click.prevent="handleAddToCart"
                     >
                         <i class="icon-bag2"></i>
@@ -25,7 +25,7 @@
                         to="#"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Quick View"
+                        title="Vista previa"
                         @click.prevent="quickviewDialog = true"
                     >
                         <i class="icon-eye"></i>
@@ -36,7 +36,7 @@
                         href="#"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Add to wishlist"
+                        title="Favorito"
                         @click.prevent="handleAddItemToWishlist"
                     >
                         <i class="icon-heart"></i>
@@ -47,7 +47,7 @@
                         to="#"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Compare"
+                        title="Comparar"
                         @click.prevent="handleAddItemToCompare"
                     >
                         <i class="icon-chart-bars"></i>

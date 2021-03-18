@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="ps-shopping">
         <best-sale-items collectionSlug="shop-best-seller-items" />
-        <recommend-items collectionSlug="shop-recommend-items" />
+        <!-- <recommend-items collectionSlug="shop-recommend-items" /> -->
         <div class="ps-shopping__header">
             <p>
                 <strong class="mr-2">{{ total }}</strong>
@@ -84,13 +84,13 @@
 <script>
 import { mapState } from 'vuex';
 import ProductDefault from '~/components/elements/product/ProductDefault';
-import RecommendItems from '~/components/partials/shop/sections/RecommendItems';
+// import RecommendItems from '~/components/partials/shop/sections/RecommendItems';
 import BestSaleItems from '~/components/partials/shop/sections/BestSaleItems';
 import ProductWide from '~/components/elements/product/ProductWide';
 
 export default {
     name: 'LayoutShop',
-    components: { ProductWide, BestSaleItems, RecommendItems, ProductDefault },
+    components: { ProductWide, BestSaleItems,  ProductDefault },
     computed: {
         ...mapState({
             products: state => state.product.products,

@@ -8,10 +8,7 @@
                 <organic-site-features />
                 <organic-top-categories />
                 <organic-promotions />
-                <organic-deal-hot
-                    v-if="collections !== null"
-                    collection-slug="organic-products"
-                />
+                
                 <organic-new-arrivals
                     v-if="collections !== null"
                     collection-slug="organic-products"
@@ -36,7 +33,6 @@ import OrganicBlog from '~/components/partials/homepage/organic/OrganicBlog';
 import FooterOrganic from '~/components/shared/footers/FooterOrganic';
 import OrganicNewArrivals from '~/components/partials/homepage/organic/OrganicNewArrivals';
 import HeaderOrganic from '~/components/shared/headers/HeaderOrganic';
-import OrganicDealHot from '~/components/partials/homepage/organic/OrganicDealHot';
 import OrganicPromotions from '~/components/partials/homepage/organic/OrganicPromotions';
 import HeaderMobileOrganic from '~/components/shared/mobile/HeaderMobileOrganic';
 import Newsletters from '~/components/partials/commons/Newsletters';
@@ -47,7 +43,7 @@ export default {
         Newsletters,
         HeaderMobileOrganic,
         OrganicPromotions,
-        OrganicDealHot,
+        
         HeaderOrganic,
         OrganicNewArrivals,
         FooterOrganic,

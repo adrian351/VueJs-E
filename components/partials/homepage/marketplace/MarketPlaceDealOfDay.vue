@@ -4,16 +4,10 @@
             <div class="ps-section__header">
                 <div class="ps-block--countdown-deal">
                     <div class="ps-block__left">
-                        <h3>Deal of the day</h3>
+                        <h3>Productos</h3>
                     </div>
                     <div class="ps-block__right">
-                        <figure>
-                            <figcaption>End in:</figcaption>
-                            <count-down-simple
-                                time="12 30 2020, 6:00 am"
-                                time-format="MM DD YYYY, h:mm a"
-                            />
-                        </figure>
+                       >
                     </div>
                 </div>
                 <nuxt-link to="/shop">

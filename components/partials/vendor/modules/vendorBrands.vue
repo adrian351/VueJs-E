@@ -7,9 +7,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(product, index) in cartProducts" :key="product.id">
+            <tr v-for="(product, index) in cartProducts" :key="product.name">
                 <td data-label="Product">
-                   <vendor-products :product="product" />
+                   <vendor-armados-products :product="product" />
                 </td>
                 <td data-label="Action">
                     <a

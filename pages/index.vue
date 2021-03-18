@@ -3,9 +3,10 @@
         <home-banner />
         <site-feautures-fullwidth />
         <armar-canasta/>
-        <p>celimine algunos archivos</p>
-        <product-filter/>
-        
+        <product-filter
+            v-if="categories !== null " 
+        />
+     
           <home-default-deal-of-day
             v-if="collections !== null"
             collection-slug="deal-of-the-day"
@@ -86,7 +87,7 @@ export default {
 
     async created() {
         const queries = [
-            
+            'product-filter',
             'deal-of-the-day',
             'consumer-electronics',
             'clothings',

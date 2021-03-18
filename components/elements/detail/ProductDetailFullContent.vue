@@ -54,8 +54,6 @@
 <script>
 import { extended } from '~/static/data/product';
 import DefaultDescription from '~/components/elements/detail/modules/DefaultDescription';
-import ThumbnailCountDown from '~/components/elements/detail/thumbnail/ThumbnailCountDown';
-import InformationExtended from '~/components/elements/detail/information/InformationExtended';
 import InformationFullContent from '~/components/elements/detail/information/InformationFullContent';
 import DescriptionFullContent from '~/components/elements/detail/modules/DescriptionFullContent';
 export default {
@@ -63,8 +61,6 @@ export default {
     components: {
         DescriptionFullContent,
         InformationFullContent,
-        InformationExtended,
-        ThumbnailCountDown,
         DefaultDescription
     },
     computed: {
