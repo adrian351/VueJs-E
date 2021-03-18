@@ -29,61 +29,9 @@ export default {
             mainMenu: [
                 {
                     text: this.$i18n.t('menu.mainMenu.home'),
-                    url: '/',
-                    extraClass: 'menu-item-has-children',
-                    subClass: 'sub-menu',
-                    subMenu: [
-                        {
-                            text: this.$i18n.t(
-                                'menu.mainMenu.marketplaceFullWidth'
-                            ),
-                            url: '/'
-                        },
-                        /*{
-                            text: this.$i18n.t('menu.mainMenu.homeAutoParts'),
-                            url: '/home/auto-part'
-                        },*/
-                        /*{
-                            text: this.$i18n.t('menu.mainMenu.homeTechnology'),
-                            url: '/home/technology'
-                        },*/
-                        /*{
-                            text: this.$i18n.t('menu.mainMenu.homeOrganic'),
-                            url: '/home/organic'
-                        },*/
-                        {
-                            text: this.$i18n.t(
-                                'menu.mainMenu.homeMarketplaceV1'
-                            ),
-                            url: '/home/market-place'
-                        },
-                        {
-                            text: this.$i18n.t(
-                                'menu.mainMenu.homeMarketplaceV2'
-                            ),
-                            url: '/home/market-place-2'
-                        },
-                        {
-                            text: this.$i18n.t(
-                                'menu.mainMenu.homeMarketplaceV3'
-                            ),
-                            url: '/home/market-place-3'
-                        },
-                        {
-                            text: this.$i18n.t(
-                                'menu.mainMenu.homeMarketplaceV4'
-                            ),
-                            url: '/home/market-place-4'
-                        }
-                        /*{
-                            text: this.$i18n.t('menu.mainMenu.homeElectronic'),
-                            url: '/home/electronic'
-                        },*/
-                        /*{
-                            text: this.$i18n.t('menu.mainMenu.homeFurniture'),
-                            url: '/home/furniture'
-                        }*/
-                    ]
+                    url: '/'
+                   
+                    
                 },
                 {
                     text: this.$i18n.t('menu.mainMenu.shop'),
