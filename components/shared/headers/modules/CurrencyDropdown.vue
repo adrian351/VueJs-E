@@ -32,17 +32,7 @@ export default {
                 {
                     id: 1,
                     code: '$',
-                    name: 'US Dollar'
-                },
-                {
-                    id: 2,
-                    code: '€',
-                    name: 'Euro'
-                },
-                {
-                    id: 3,
-                    code: '£',
-                    text: 'GBP'
+                    name: 'MXN'
                 }
             ]
         };

@@ -36,12 +36,12 @@ import { mapState } from 'vuex';
 import { carouselStandard } from '~/utilities/carousel-helpers';
 import { getColletionBySlug } from '~/utilities/product-helper';
 import CountDown from '~/components/elements/commons/CountDown';
-import CountDownSimple from '~/components/elements/commons/CountDownSimple';
+
 import CarouselArrows from '~/components/elements/commons/CarouselArrows';
 
 export default {
     name: 'MarketPlaceDealOfDay',
-    components: { CarouselArrows, CountDownSimple, CountDown, ProductDefault },
+    components: { CarouselArrows, CountDown, ProductDefault },
     props: {
         collectionSlug: {
             type: String,

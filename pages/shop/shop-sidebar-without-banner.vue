@@ -14,6 +14,7 @@
                             <h1 class="text-uppercase">Shop Sidebar</h1>
                         </div>
                         <layout-shop-sidebar v-if="collections !== null" />
+                        <cotizar-pedido/>
                     </div>
                 </div>
             </div>
@@ -32,6 +33,7 @@ import ShopCategories from '~/components/partials/shop/sections/ShopCategories';
 import ShopSidebarBestSeller from '~/components/partials/shop/sections/ShopSidebarBestSeller';
 import LayoutShopSidebar from '~/components/partials/shop/LayoutShopSidebar';
 import ShopSidebarBanner from '~/components/partials/shop/sections/ShopSidebarBanner';
+import CotizarPedido from '~/components/partials/shop/sections/CotizarPedido';
 
 export default {
     components: {
@@ -43,6 +45,7 @@ export default {
         ShopBanner,
         ShopWidget,
         LayoutShop,
+        CotizarPedido,
         BreadCrumb
     },
     transition() {

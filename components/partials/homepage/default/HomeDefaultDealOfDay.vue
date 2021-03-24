@@ -37,7 +37,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import CountDownSimple from '~/components/elements/commons/CountDownSimple';
+
 import CarouselArrows from '~/components/elements/commons/CarouselArrows';
 import { carouselFullwidth } from '~/utilities/carousel-helpers.js';
 import ProductDefault from '~/components/elements/product/ProductDefault';
@@ -49,7 +49,7 @@ export default {
         ProductInner,
         ProductDefault,
         CarouselArrows,
-        CountDownSimple
+        carouselFullwidth
     },
     props: {
         collectionSlug: {

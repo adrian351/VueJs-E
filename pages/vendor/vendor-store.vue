@@ -3,6 +3,8 @@
 
         <bread-crumb :breadcrumb="breadCrumb" />
         <vendor-store />
+
+        <CotizarPedido/>
     </div>
     
 
@@ -11,11 +13,13 @@
 <script>
 import BreadCrumb from '~/components/elements/BreadCrumb';
 import VendorStore from '~/components/partials/vendor/VendorStore';
+import CotizarPedido from '~/components/partials/shop/sections/CotizarPedido';
 
 export default {
     components: {
         BreadCrumb,
-        VendorStore
+        VendorStore,
+        CotizarPedido
         
     },
 

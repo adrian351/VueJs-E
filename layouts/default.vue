@@ -3,7 +3,7 @@
         <v-app>
             <v-main>
                 <header-default />
-                <header-mobile />
+                <!-- <header-mobile /> -->
                 <nuxt></nuxt>
                 <notify />
                 <newsletters />

@@ -23,7 +23,7 @@
                 </li>
                 <li class="ps-block__footer">
                     <a href="#" @click.prevent="handleLogout">
-                        Logout
+                        Cerrar sesión
                     </a>
                 </li>
             </ul>

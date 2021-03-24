@@ -19,6 +19,8 @@
                             collection-slug="shop-best-seller-items"
                         />
                         <layout-shop-sidebar v-if="collections !== null" />
+
+                        <CotizarPedido/>
                     </div>
                 </div>
             </div>
@@ -38,6 +40,7 @@ import ShopSidebarBestSeller from '~/components/partials/shop/sections/ShopSideb
 import LayoutShopSidebar from '~/components/partials/shop/LayoutShopSidebar';
 import ShopSidebarBanner from '~/components/partials/shop/sections/ShopSidebarBanner';
 import Newsletters from '~/components/partials/commons/Newsletters';
+import CotizarPedido from '~/components/partials/shop/sections/CotizarPedido';
 
 export default {
     name: 'index',
@@ -51,6 +54,7 @@ export default {
         ShopBanner,
         ShopWidget,
         LayoutShop,
+        CotizarPedido,
         BreadCrumb
     },
     transition() {

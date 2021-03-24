@@ -19,7 +19,8 @@ export default {
     transition: 'zoom',
     components: {
         BlogGrid,
-        BreadCrumb2
+        BreadCrumb2,
+        HeaderMobile
     },
 
     data: () => {

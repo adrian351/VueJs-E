@@ -16,7 +16,7 @@
                 v-model="searchText"
                 class="form-control"
                 type="text"
-                placeholder="I'm shopping for..."
+                placeholder="Buscar..."
                 @keyup="handleSearchProduct"
             />
             <v-progress-circular
@@ -44,11 +44,11 @@
                         :key="product.id"
                     />
                 </template>
-                <span>Not found! Try with another keyword.</span>
+                <span>¡No encontrado! Pruébalo con otra palabra clave.</span>
             </div>
             <div class="ps-panel__footer text-center">
                 <nuxt-link to="/search">
-                    See all results
+                    Ver todos los resultados
                 </nuxt-link>
             </div>
         </div>

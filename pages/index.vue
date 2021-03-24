@@ -17,6 +17,7 @@
         <home-default-top-categories />
         <template v-if="collections !== null">
             <conumer-electronics collection-slug="consumer-electronics" />
+            <!-- <CotizarPedido/> -->
             <clothings collection-slug="clothings" /> 
             <garden-and-kitchen collection-slug="garden-and-kitchen" />
         </template>
@@ -48,7 +49,7 @@ import MobileDrawer from '~/components/shared/mobile/MobileDrawer';
 import HomeDefaultDealOfDay from '~/components/partials/homepage/default/HomeDefaultDealOfDay';
 import ArmarCanasta from '~/components/partials/homepage/default/ArmarCanasta';
 import ProductFilter from '~/components/partials/homepage/default/ProductFilter';
-// import ThemeOption from '~/components/shared/ThemeOption';
+import CotizarPedido from '~/components/partials/shop/sections/CotizarPedido';
 
 export default {
     components: {
@@ -72,6 +73,7 @@ export default {
         Clothings,
         ConumerElectronics,
         ArmarCanasta,
+        CotizarPedido,
         ProductFilter
     },
 
