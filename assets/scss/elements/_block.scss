@@ -134,6 +134,39 @@
     }
 }
 
+.ps-block--cotizar{
+    display: flex;
+
+    button{
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: rgb(7, 7, 7);
+        background-color: #fcb800;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 5px #999;
+      }
+      
+      .button:hover {
+          background-color: #030303;
+            color:#fcb800;
+        }
+      
+      .button:active {
+        color:#fcb800;
+        background-color: #070707;
+        box-shadow: 0 2px #666;
+        transform: translateY(4px);
+
+    }
+
+}
+
 .ps-block--category-2 {
     display: flex;
 
@@ -419,6 +452,7 @@
 .ps-filter--armar{
     display: inline-flex;
     flex-flow: row nowrap;
+   
         a{   
             // float:left;
             display:flex;
@@ -440,6 +474,42 @@
 }
 };
 
+.ps-block--armarC{
+    display: flex;
+    flex-flow: row nowrap;
+    
+   .ps-block__btn{
+        
+        button{
+            display: flex;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: rgb(7, 7, 7);
+            background-color: #fcb800;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 5px #999; 
+            margin-bottom: 30px;
+           
+        }
+    }
+    button:hover {
+        background-color: #030303;
+        color:#fcb800;
+    }
+
+    button:active {
+        color:#fcb800;
+        background-color: #070707;
+        box-shadow: 0 2px #666;
+        transform: translateY(4px);
+
+    }
+}
 
 .ps-block--countdown-deal {
     display: flex;
@@ -451,25 +521,6 @@
             font-size: 24px;
             font-weight: 400;
             margin-right: 70px;
-        }
-    }
-
-    figure {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0;
-        padding: 7px 20px;
-        font-size: 18px;
-        font-weight: 600;
-        color: #fff;
-        border-radius: 3px;
-        line-height: 1;
-        background-color: #f14705;
-
-        figcaption {
-            color: #ffffff;
-            font-weight: 600;
-            margin-right: 20px;
         }
     }
 

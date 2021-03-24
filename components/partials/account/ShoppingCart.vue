@@ -84,6 +84,7 @@ import { mapState } from 'vuex';
 import ProductShoppingCart from '~/components/elements/product/ProductShoppingCart';
 import TableShoppingCart from '~/components/partials/account/modules/TableShoppingCart';
 
+
 export default {
     name: 'ShoppingCart',
     components: { TableShoppingCart, ProductShoppingCart },

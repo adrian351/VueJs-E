@@ -38,6 +38,7 @@
                         placeholder="Last Name"
                         outlined
                         height="50"
+                        
                     />
                 </div>
             </div>

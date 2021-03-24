@@ -8,6 +8,7 @@ export default {
                 name: 'viewport',
                 content: 'width=device-width, initial-scale=1'
             },
+
             {
                 hid: 'description',
                 name: 'description',
@@ -29,7 +30,8 @@ export default {
         '~/static/fonts/Linearicons/Font/demo-files/demo.css',
         '~/static/fonts/font-awesome/css/font-awesome.css',
         '~/static/css/bootstrap.min.css',
-        '~/assets/scss/style.scss'
+        '~/assets/scss/style.scss',
+        // '@/assets/main.scss'
     ],
 
     plugins: [
@@ -37,13 +39,16 @@ export default {
         { src: '~/plugins/swiper-plugin.js', ssr: false },
         { src: '~/plugins/vue-notification.js', ssr: false },
         { src: '~/plugins/axios.js', ssr: false },
-        { src: '~/plugins/lazyLoad.js', ssr: false }
+        { src: '~/plugins/lazyLoad.js', ssr: false },
+        { src: '~/plugins/vuetify.js', ssr: false }
     ],
 
     buildModules: [
         '@nuxtjs/vuetify',
         '@nuxtjs/style-resources',
-        'cookie-universal-nuxt'
+        'cookie-universal-nuxt',
+        '@nuxtjs/color-mode',
+        '@nuxtjs/svg'
     ],
 
     styleResources: {
@@ -55,7 +60,7 @@ export default {
     i18n: {
         locales: [
             { code: 'en', file: 'en.json' },
-            { code: 'fr', file: 'fr.json' }
+         
         ],
         lazy: true,
         defaultLocale: 'en',

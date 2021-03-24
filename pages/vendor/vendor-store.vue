@@ -1,8 +1,11 @@
 <template lang="html">
     <div class="ps-page--single ps-page--vendor">
+
         <bread-crumb :breadcrumb="breadCrumb" />
         <vendor-store />
     </div>
+    
+
 </template>
 
 <script>

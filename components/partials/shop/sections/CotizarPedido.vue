@@ -4,9 +4,9 @@
             <div class="ps-block--armarC">
             <!-- <span>Cotiza tu pedido aqui:</span> -->
                 <div class="ps-block__btn">
-                    <nuxt-link to="/vendor/vendor-store">
+                    <nuxt-link to="/account/Cotizar">
                         <button  >
-                            Armar Canasta
+                            Cotizar Pedido
                         
                         </button>
                     </nuxt-link> 
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-    name:'ArmarCanasta'
+    name:'Cotizar'
 }
 </script>
 

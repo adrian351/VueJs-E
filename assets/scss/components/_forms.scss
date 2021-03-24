@@ -660,3 +660,50 @@
         }
     }
 }
+
+.ps-form--cotizar {
+    h3 {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 0;
+        > label {
+            margin-bottom: 0.5em;
+        }
+    }
+
+    .v-text-field {
+        > .v-input__control {
+            > .v-input__slot {
+                position: relative;
+                min-height: 40px !important;
+                max-height: 100px;
+                fieldset {
+                    border-radius: 0;
+                    border-color: #ccc;
+                }
+            }
+        }
+        &.v-input--is-focused {
+            > .v-input__control {
+                > .v-input__slot {
+                    fieldset {
+                        border-width: 1px;
+                        border-color: $color-1st;
+                    }
+                }
+            }
+        }
+    }
+
+    .ps-form__submit {
+        @media (min-width: 768px) {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

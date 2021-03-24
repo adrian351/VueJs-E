@@ -90,6 +90,12 @@ export default {
                                         'menu.mainMenu.loginOrregister'
                                     ),
                                     url: '/account/login'
+                                },
+                                {
+                                    text: this.$i18n.t(
+                                        'menu.mainMenu.loginOrregister'
+                                    ),
+                                    url: '/account/Cotizar'
                                 }
                             ]
                         }

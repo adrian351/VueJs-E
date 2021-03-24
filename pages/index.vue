@@ -1,11 +1,12 @@
 <template lang="html">
     <main id="homepage-1">
+        <!-- <theme-option/> -->
         <home-banner />
         <site-feautures-fullwidth />
-        <armar-canasta/>
-        <product-filter
-            v-if="categories !== null " 
-        />
+        <armar-canasta/> 
+        <!-- <product-filter
+            v-if="categories !== null" collection-slug="product-filter" 
+        /> -->
      
           <home-default-deal-of-day
             v-if="collections !== null"
@@ -16,11 +17,10 @@
         <home-default-top-categories />
         <template v-if="collections !== null">
             <conumer-electronics collection-slug="consumer-electronics" />
-            <clothings collection-slug="clothings" />
+            <clothings collection-slug="clothings" /> 
             <garden-and-kitchen collection-slug="garden-and-kitchen" />
         </template>
         
-        <home-ads />
         
         <new-arrivals
             v-if="collections !== null"
@@ -31,12 +31,10 @@
 </template>
 <script>
 import { mapState } from 'vuex';
-// import DownloadApp from '~/components/partials/commons/DownloadApp';
 import FooterFullwidth from '~/components/shared/footers/FooterFullwidth';
 import Newsletters from '~/components/partials/commons/Newsletters';
 import SiteFeauturesFullwidth from '~/components/partials/commons/SiteFeauturesFullwidth';
 import HomeAdsColumns from '~/components/partials/homepage/default/HomeAdsColumns';
-import HomeAds from '~/components/partials/homepage/default/HomeAds';
 import NewArrivals from '~/components/partials/homepage/default/NewArrivals';
 import HomeDefaultTopCategories from '~/components/partials/homepage/default/HomeDefaultTopCategories';
 import GardenAndKitchen from '~/components/partials/homepage/default/GardenAndKitchen';
@@ -48,13 +46,14 @@ import NavigationList from '~/components/shared/mobile/NavigationList';
 import HeaderMobile from '~/components/shared/mobile/HeaderMobile';
 import MobileDrawer from '~/components/shared/mobile/MobileDrawer';
 import HomeDefaultDealOfDay from '~/components/partials/homepage/default/HomeDefaultDealOfDay';
-import DemoPanel from '~/components/shared/DemoPanel';
 import ArmarCanasta from '~/components/partials/homepage/default/ArmarCanasta';
 import ProductFilter from '~/components/partials/homepage/default/ProductFilter';
+// import ThemeOption from '~/components/shared/ThemeOption';
 
 export default {
     components: {
-        DemoPanel,
+        // ThemeOption,
+        // DemoPanel,
         HomeDefaultDealOfDay,
         MobileDrawer,
         HeaderMobile,
@@ -64,7 +63,7 @@ export default {
         GardenAndKitchen,
         HomeAdsColumns,
         SiteFeauturesFullwidth,
-        HomeAds,
+        // HomeAds,
         FooterFullwidth,
         // DownloadApp,
         Newsletters,

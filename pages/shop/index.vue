@@ -4,14 +4,18 @@
         <div class="ps-container">
             <shop-banner />
             <shop-brands />
+
+            
             <!-- <shop-categories /> -->
             <div class="ps-layout--shop">
                 <div class="ps-layout__left">
                     <shop-widget v-if="widgetLoading === false" />
                     <loading v-else />
+                    
                 </div>
                 <div class="ps-layout__right">
                     <layout-shop v-if="collections !== null" />
+                    <CotizarPedido/>
                 </div>
             </div>
         </div>
@@ -26,6 +30,7 @@ import ShopWidget from '~/components/partials/shop/modules/ShopWidget';
 import ShopBanner from '~/components/partials/shop/sections/ShopBanner';
 import ShopBrands from '~/components/partials/shop/sections/ShopBrands';
 import ShopCategories from '~/components/partials/shop/sections/ShopCategories';
+import CotizarPedido from '~/components/partials/shop/sections/CotizarPedido';
 import Loading from '~/components/elements/commons/Loading';
 
 export default {
@@ -37,6 +42,7 @@ export default {
         ShopBanner,
         ShopWidget,
         LayoutShop,
+        CotizarPedido,
         BreadCrumb,
     },
     transition() {

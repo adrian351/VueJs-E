@@ -84,7 +84,7 @@
 <script>
 import { mapState } from 'vuex';
 import ProductDefault from '~/components/elements/product/ProductDefault';
-// import RecommendItems from '~/components/partials/shop/sections/RecommendItems';
+
 import BestSaleItems from '~/components/partials/shop/sections/BestSaleItems';
 import ProductWide from '~/components/elements/product/ProductWide';
 
