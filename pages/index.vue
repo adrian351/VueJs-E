@@ -17,7 +17,7 @@
         <home-default-top-categories />
         <template v-if="collections !== null">
             <conumer-electronics collection-slug="consumer-electronics" />
-            <!-- <CotizarPedido/> -->
+            <!-- <CotizarPedido/> --> aqui esta el boton
             <clothings collection-slug="clothings" /> 
             <garden-and-kitchen collection-slug="garden-and-kitchen" />
         </template>
