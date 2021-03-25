@@ -2,9 +2,9 @@
     <table class="table ps-table--responsive ps-table--shopping-cart">
         <thead>
             <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
                 <th>Total</th>
                 <th>Action</th>
             </tr>
@@ -34,6 +34,7 @@
                 </td>
                 <td data-label="Action">
                     <a
+                       
                         href="#"
                         @click.prevent="handleRemoveProductFromCart(product)"
                     >
@@ -62,23 +63,44 @@ export default {
     },
     methods: {
         async loadCartProducts() {
-            const cookieCart = this.$cookies.get('cart', { parseJSON: true });
-            let queries = [];
-            cookieCart.cartItems.forEach(item => {
-                queries.push(item.id);
+             const cookieCart = this.$cookies.get('cart', {
+                parseJSON: true
             });
-            if (this.cartItems.length > 0) {
-                await this.$store.dispatch('product/getCartProducts', queries);
-            } else {
-                this.$store.commit('product/setCartProducts', null);
+            if (cookieCart) {
+                const queries = getListOfProductId(cookieCart.items);
+                if (queries.length >0) {
+                    const response = await this.$store.dispatch(
+                        'product/setCartProducts',
+                        queries
+                    );
+                }
             }
+            // const cookieCart = this.$cookies.get('cart', { parseJSON: true });
+            // let queries = [];
+            // cookieCart.cartItems.forEach(item => {
+            //     queries.push(item.id);
+            // });
+            // if (this.cartItems.length > 0) {
+            //     await this.$store.dispatch('product/getCartProducts', queries);
+            // } else {
+            //     this.$store.commit('product/setCartProducts', null);
+            // }
         },
+
         handleRemoveProductFromCart(product) {
-            const cartItem = this.cartItems.find(
-                item => item.id === product.id
-            );
-            this.$store.dispatch('cart/removeProductFromCart', cartItem);
-            this.loadCartProducts();
+            this.$store.dispatch('wishlist/removeItemFromWishlist', product);
+            this.loadWishlist();
+            this.$notify({
+                group: 'addCartSuccess',
+                title: 'Remove Item!',
+                text: `${product.title} has been removed from your wishlist!`
+            });
+
+            // const cartItem = this.cartItems.find(
+            //     item => item.id === product.id
+            // );
+            // this.$store.dispatch('cart/removeProductFromCart', cartItem);
+            // this.loadCartProducts();
         }
     }
 };

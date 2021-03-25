@@ -60,6 +60,7 @@
           <div class="form-group">
             <label>Empresa</label>
             <v-text-field
+                
                 placeholder="Nombre de empresa"
                 outlined
                 height="50"
@@ -69,6 +70,7 @@
             <v-checkbox
                 color="success"
                 label="No soy una empresa"
+               
             />
           </div>
 
@@ -95,20 +97,26 @@
           </div>
 
           <div class="ps-form__submit">
-            <button
-              type="submit"
-              class="ps-btn"
-              @click.prevent="handleSubmit"
-            >
-              Realizar cotización
-            </button>
-
-          </div>
+            <nuxt-link to="/shop">
+                <i class="icon-arrow-left mr-1"></i>
+                Regresar 
+            </nuxt-link>
+            <div class="ps-block__btn">
+                <button  @click="handleToShipping">
+                   Solicitar cotización 
+                </button>
+            </div>
+        </div>
   </div>
 </template>
 
 <script>
 export default {
   name : 'Cotizar',
+
+    
+
 }
+
+
 </script>

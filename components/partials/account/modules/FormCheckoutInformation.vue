@@ -82,11 +82,11 @@
         <div class="ps-form__submit">
             <nuxt-link to="/account/shopping-cart">
                 <i class="icon-arrow-left mr-1"></i>
-                Return to shopping cart
+                Regresar
             </nuxt-link>
             <div class="ps-block__footer">
                 <button class="ps-btn" @click="handleToShipping">
-                    Continue to shipping
+                    Continuar compra
                 </button>
             </div>
         </div>

@@ -659,6 +659,7 @@
             align-items: center;
         }
     }
+
 }
 
 .ps-form--cotizar {
@@ -705,5 +706,37 @@
             justify-content: space-between;
             align-items: center;
         }
+    }
+
+    .ps-block__btn{
+        
+        button{
+            display: flex;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: rgb(7, 7, 7);
+            background-color: #fcb800;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 5px #999; 
+            margin-bottom: 30px;
+           
+        }
+    }
+    button:hover {
+        background-color: #030303;
+        color:#fcb800;
+    }
+
+    button:active {
+        color:#fcb800;
+        background-color: #070707;
+        box-shadow: 0 2px #666;
+        transform: translateY(4px);
+
     }
 }

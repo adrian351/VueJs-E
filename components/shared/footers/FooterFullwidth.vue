@@ -2,7 +2,7 @@
     <footer class="ps-footer">
         <div class="ps-container">
             <FooterWidgets />
-            <FooterLinks />
+            <!-- <FooterLinks /> -->
             <FooterCopyright />
         </div>
     </footer>
@@ -10,13 +10,13 @@
 <script>
 import FooterWidgets from '~/components/shared/footers/modules/FooterWidgets';
 import FooterCopyright from '~/components/shared/footers/modules/FooterCopyright';
-import FooterLinks from '~/components/shared/footers/modules/FooterLinks';
+// import FooterLinks from '~/components/shared/footers/modules/FooterLinks';
 
 export default {
     components: {
         FooterWidgets,
         FooterCopyright,
-        FooterLinks
+        
     }
 };
 </script>

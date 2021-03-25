@@ -49,6 +49,12 @@ export default {
                                     ),
                                     url: '/shop/shop-sidebar-without-banner'
                                 },
+                                {
+                                    text: this.$i18n.t(
+                                        'menu.mainMenu.vendorStore'
+                                    ),
+                                    url: '/vendor/vendor-store'
+                                }
                                 
                             ]
                         },
@@ -90,12 +96,6 @@ export default {
                                         'menu.mainMenu.loginOrregister'
                                     ),
                                     url: '/account/login'
-                                },
-                                {
-                                    text: this.$i18n.t(
-                                        'menu.mainMenu.loginOrregister'
-                                    ),
-                                    url: '/account/Cotizar'
                                 }
                             ]
                         }
@@ -104,44 +104,33 @@ export default {
                 {
                     text: this.$i18n.t('menu.mainMenu.pages'),
                     url: '/',
-                    extraClass: 'menu-item-has-children has-mega-menu',
-                    subClass: 'sub-menu',
-                    mega: 'true',
-                    megaContent: [
-                        {
-                            heading: this.$i18n.t('menu.mainMenu.basicPage'),
-                            megaItems: [
-                                {
-                                    text: this.$i18n.t('menu.mainMenu.aboutUs'),
-                                    url: '/page/about-us'
-                                },
-                                {
-                                    text: this.$i18n.t('menu.mainMenu.contact'),
-                                    url: '/page/contact-us'
-                                },
-                                {
-                                    text: this.$i18n.t('menu.mainMenu.faqs'),
-                                    url: '/page/faqs'
-                                },
-                                {
-                                    text: this.$i18n.t('menu.mainMenu.politics'),
-                                    url: '/page/politics'
-                                }
-                            ]
-                        },
-                        {
-                            heading: this.$i18n.t('menu.mainMenu.vendorPages'),
-                            megaItems: [
-                                {
-                                    text: this.$i18n.t(
-                                        'menu.mainMenu.vendorStore'
-                                    ),
-                                    url: '/vendor/vendor-store'
-                                }
-                                
-                            ]
-                        }
-                    ]
+                    // extraClass: 'menu-item-has-children has-mega-menu',
+                    // subClass: 'sub-menu',
+                    // mega: 'true',
+                    // megaContent: [
+                    //     {
+                    //         heading: this.$i18n.t('menu.mainMenu.basicPage'),
+                    //         megaItems: [
+                    //             {
+                    //                 text: this.$i18n.t('menu.mainMenu.aboutUs'),
+                    //                 url: '/page/about-us'
+                    //             },
+                    //             {
+                    //                 text: this.$i18n.t('menu.mainMenu.contact'),
+                    //                 url: '/page/contact-us'
+                    //             },
+                    //             {
+                    //                 text: this.$i18n.t('menu.mainMenu.faqs'),
+                    //                 url: '/page/faqs'
+                    //             },
+                    //             {
+                    //                 text: this.$i18n.t('menu.mainMenu.politics'),
+                    //                 url: '/page/politics'
+                    //             }
+                    //         ]
+                    //     },
+                       
+                    // ]
                 },
                 {
                     text: this.$i18n.t('menu.mainMenu.blogs'),

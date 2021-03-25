@@ -78,9 +78,9 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     padding: 15px 30px 10px;
-    background-color: #fff;
-    @include transition(all 0.4s ease);
-    border: 1px solid #ccc;
+    background-color: rgb(253, 253, 253);
+    @include transition(all 0.3s ease);
+    border: 1px solid rgb(27, 27, 27);
 
     > * {
         width: 100%;
@@ -108,7 +108,7 @@
                 color: $color-heading;
                 line-height: 20px;
                 padding: 5px 0;
-                font-size: 14px;
+                font-size: 15px;
                 background-color: transparent;
 
                 &.has-badge {

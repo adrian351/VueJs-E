@@ -5,7 +5,7 @@
             <!-- <span>Cotiza tu pedido aqui:</span> -->
                 <div class="ps-block__btn">
                     <nuxt-link to="/vendor/vendor-store">
-                        <button  >
+                        <button >
                             Armar Canasta
                         
                         </button>

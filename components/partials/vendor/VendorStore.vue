@@ -63,6 +63,7 @@
                         </div>
                     </div>
                     <VendorProducts />
+                    <CotizarPedido/>
                 </div>
             </div>
         </div>
@@ -72,7 +73,7 @@
 <script>
 import VendorProfile from './modules/VendorProfile';
 import ProductDefault from '~/components/elements/product/ProductDefault';
-
+import CotizarPedido from  '~/components/partials/shop/sections/CotizarPedido';
 import { relatedProduct } from '~/static/data/product.json';
 import VendorProducts from './modules/VendorProducts';
 
@@ -80,7 +81,7 @@ export default {
 
 
     name: 'VendorStore',
-    components: { VendorProducts, VendorProfile, ProductDefault },
+    components: { VendorProducts, VendorProfile, ProductDefault , CotizarPedido},
     data() {
         return {
             bestSellerItems: relatedProduct,

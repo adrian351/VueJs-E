@@ -5,7 +5,7 @@
                 {{ $t('footer.widgetHeading.contactUs') }}
             </h4>
             <div class="widget_content">
-                <p>Call us 24/7</p>
+                <p>Llámenos 24/7</p>
                 <h3>1800 97 97 69</h3>
                 <p>
                     502 New Design Str, Melbourne, Australia <br />
@@ -41,19 +41,22 @@
             </h4>
             <ul class="ps-list--link">
                 <li>
-                    <a href="#">Policy</a>
+                    <nuxt-link to="/page/politics">Políticas</nuxt-link>
+                    
                 </li>
                 <li>
-                    <a href="#">Term & Condition</a>
+                    <nuxt-link to="/page/blank">Término & Condición</nuxt-link>
+                    
                 </li>
+                <!-- <li>
+                    <a href="#">Envío</a>
+                </li> -->
+                <!-- <li>
+                    <a href="#">devolución</a>
+                </li> -->
                 <li>
-                    <a href="#">Shipping</a>
-                </li>
-                <li>
-                    <a href="#">Return</a>
-                </li>
-                <li>
-                    <a href="faqs.html">FAQs</a>
+                    <nuxt-link to="/page/faqs">Preguntas frecuentes</nuxt-link>
+                    
                 </li>
             </ul>
         </aside>
@@ -63,16 +66,11 @@
             </h4>
             <ul class="ps-list--link">
                 <li>
-                    <a href="about-us.html">About Us</a>
+                    <nuxt-link to="/page/about-us">Sobre nosotros</nuxt-link>
                 </li>
+                
                 <li>
-                    <a href="#">Affilate</a>
-                </li>
-                <li>
-                    <a href="#">Career</a>
-                </li>
-                <li>
-                    <a href="contact-us.html">Contact</a>
+                    <nuxt-link to="/page/contact-us">Contacto</nuxt-link>
                 </li>
             </ul>
         </aside>
@@ -81,17 +79,13 @@
                 {{ $t('footer.widgetHeading.bussiness') }}
             </h4>
             <ul class="ps-list--link">
+               
                 <li>
-                    <a href="#">Our Press</a>
+                    <nuxt-link to="/account/user-information">Mi cuenta</nuxt-link>
                 </li>
                 <li>
-                    <a href="checkout.html">Checkout</a>
-                </li>
-                <li>
-                    <a href="my-account.html">My account</a>
-                </li>
-                <li>
-                    <a href="shop-default.html">Shop</a>
+                    <nuxt-link to="/shop">Tienda</nuxt-link>
+                    
                 </li>
             </ul>
         </aside>
