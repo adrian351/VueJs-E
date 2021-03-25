@@ -1634,6 +1634,12 @@
         .ps-section__left {
             max-width: 25%;
         }
+        .ps-block__divider {
+            display: block;
+            padding-top: 10px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #d5d5d5;
+        }
 
         .ps-section__right {
             max-width: 75%;

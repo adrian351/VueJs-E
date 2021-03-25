@@ -8,14 +8,16 @@
                         <shop-widget
                             v-if="categories !== null && brands !== null"
                         />
-                    </div>
+                       <cotizar-pedido/>
+                    </div> 
                     <div class="ps-layout__right">
                         <div class="ps-page__header">
                             <h1 class="text-uppercase">Shop Sidebar</h1>
                         </div>
                         <layout-shop-sidebar v-if="collections !== null" />
-                        <cotizar-pedido/>
+                        
                     </div>
+                    
                 </div>
             </div>
         </div>

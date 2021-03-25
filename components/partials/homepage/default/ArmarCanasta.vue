@@ -4,6 +4,7 @@
             <div class="ps-block--armarC">
             <!-- <span>Cotiza tu pedido aqui:</span> -->
                 <div class="ps-block__btn">
+                    
                     <nuxt-link to="/vendor/vendor-store">
                         <button >
                             Armar Canasta

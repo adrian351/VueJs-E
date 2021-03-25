@@ -28,6 +28,7 @@ export default {
         return {
             mainMenu: [
                 {
+                    
                     text: this.$i18n.t('menu.mainMenu.home'),
                     url: '/',
                     

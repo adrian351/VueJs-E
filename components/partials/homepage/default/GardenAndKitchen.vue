@@ -4,33 +4,7 @@
             <div class="ps-section__header">
                 <h3>{{ $t('homeDefault.gardenAndKitchen.heading') }}</h3>
                 <ul class="ps-section__links">
-                    <li>
-                        <nuxt-link :to="localePath('/shop')">
-                            {{
-                                $t(
-                                    'homeDefault.consumerElectronics.links.newArrivals'
-                                )
-                            }}
-                        </nuxt-link>
-                    </li>
-                    <li>
-                        <nuxt-link :to="localePath('/shop')">
-                            {{
-                                $t(
-                                    'homeDefault.consumerElectronics.links.bestSeller'
-                                )
-                            }}
-                        </nuxt-link>
-                    </li>
-                    <li>
-                        <nuxt-link :to="localePath('/shop')">
-                            {{
-                                $t(
-                                    'homeDefault.consumerElectronics.links.bestSeller'
-                                )
-                            }}
-                        </nuxt-link>
-                    </li>
+        
                     <li>
                         <nuxt-link :to="localePath('/shop')">
                             {{ $t('common.viewAll') }}

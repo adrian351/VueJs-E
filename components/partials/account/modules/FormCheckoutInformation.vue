@@ -86,6 +86,7 @@
             </nuxt-link>
             <div class="ps-block__footer">
                 <button class="ps-btn" @click="handleToShipping">
+                   <i class="icon-shopping-cart-left mr-1"></i> 
                     Continuar compra
                 </button>
             </div>

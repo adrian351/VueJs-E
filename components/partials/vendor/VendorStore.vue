@@ -3,7 +3,12 @@
         <div class="container">
             <div class="ps-section__container">
                 <div class="ps-section__left">
+                    <CotizarPedido/>
+                    <div class="ps-block__divider">
+                    </div>
                     <VendorProfile />
+                     
+                    
                 </div>
                 <div class="ps-section__right">
                     <div class="ps-block--vendor-filter">
@@ -63,7 +68,7 @@
                         </div>
                     </div>
                     <VendorProducts />
-                    <CotizarPedido/>
+                   
                 </div>
             </div>
         </div>

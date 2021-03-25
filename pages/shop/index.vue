@@ -2,20 +2,22 @@
     <div class="ps-page--shop">
         <bread-crumb :breadcrumb="breadCrumb" layout="fullwidth" />
         <div class="ps-container">
+            
             <shop-banner />
             <shop-brands />
-
+             
             
             <!-- <shop-categories /> -->
             <div class="ps-layout--shop">
                 <div class="ps-layout__left">
+                    <CotizarPedido/>
                     <shop-widget v-if="widgetLoading === false" />
                     <loading v-else />
                     
                 </div>
                 <div class="ps-layout__right">
                     <layout-shop v-if="collections !== null" />
-                    <CotizarPedido/>
+   
                 </div>
             </div>
         </div>
