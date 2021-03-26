@@ -15,7 +15,7 @@
         > li {
             position: relative;
             display: inline-block;
-            margin-right: 20px;
+            margin-right: 25px;
             padding-right: 20px;
 
             &:after {
@@ -25,6 +25,13 @@
                 width: 2px;
                 height: 15px;
                 background-color: #000;
+            }
+            a{
+                font-size: 18px;
+            }
+
+            i{
+                font-size: 24px;
             }
 
             a {
@@ -49,7 +56,7 @@
     }
 
     .navigation__left {
-        max-width: 260px;
+        max-width: 360px;
     }
 
     .navigation__right {
@@ -79,20 +86,20 @@
         span {
             position: absolute;
             bottom: 0;
-            right: -6px;
+            right: -10px;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #fff;
             vertical-align: top;
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             color: #ffffff;
-            background-color: #000000;
-            border-radius: 50%;
+            background-color: #050505;
+            border-radius: 100%;
 
             i {
-                font-size: 12px;
+                font-size: 13px;
                 font-style: normal;
                 line-height: 1em;
                 font-weight: 500;
@@ -134,7 +141,7 @@
     }
 
     .header__top {
-        padding: 25px 0;
+        padding: 35px 0;
         background-color: $color-1st;
         border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 
@@ -540,8 +547,9 @@
         .navigation__right {
             text-align: right;
             .header__extra {
-                margin-right: 10px;
+                margin-right: 10px;  
             }
+            
         }
     }
 

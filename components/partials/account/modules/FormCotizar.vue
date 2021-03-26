@@ -103,7 +103,7 @@
             </nuxt-link>
             <div class="ps-block__btn">
                 <button  @click="handleToShipping">
-                   Solicitar cotización 
+                    Solicitar cotización 
                 </button>
             </div>
         </div>

@@ -1,6 +1,7 @@
 <template lang="html">
     <ul :class="className">
         <template v-for="item in mainMenu">
+             
             <MenuDropdown v-if="item.subMenu" :menu-data="item" />
             <MenuMega v-else-if="item.mega" :menu-data="item" />
             <li v-else :key="item.text">
@@ -28,12 +29,13 @@ export default {
         return {
             mainMenu: [
                 {
-                    
+                    icon:'icon-home mr-1',
                     text: this.$i18n.t('menu.mainMenu.home'),
                     url: '/',
                     
                 },
-                {
+                {   
+                    icon:'icon-shop mr-1',
                     text: this.$i18n.t('menu.mainMenu.shop'),
                     url: '/shop',
                     extraClass: 'menu-item-has-children has-mega-menu',
@@ -51,6 +53,7 @@ export default {
                                     url: '/shop/shop-sidebar-without-banner'
                                 },
                                 {
+                                   
                                     text: this.$i18n.t(
                                         'menu.mainMenu.vendorStore'
                                     ),

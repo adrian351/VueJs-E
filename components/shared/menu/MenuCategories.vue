@@ -1,6 +1,7 @@
 <template lang="html">
     <ul class="menu--dropdown">
         <template v-for="item in menuCategories">
+            
             <menu-dropdown v-if="item.subMenu" :menu-data="item" />
             <menu-mega v-else-if="item.mega" :menu-data="item" />
             <li v-else :key="item.text">

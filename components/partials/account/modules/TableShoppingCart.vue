@@ -34,7 +34,7 @@
                 </td>
                 <td data-label="Action">
                     <a
-                       
+                        class="btn btn-danger"
                         href="#"
                         @click.prevent="handleRemoveProductFromCart(product)"
                     >

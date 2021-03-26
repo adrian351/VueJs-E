@@ -10,10 +10,10 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Product name</th>
-                                <th>Unit Price</th>
-                                <th>Vendor</th>
-                                <th></th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Provedor</th>
+                                <th>Accion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -21,17 +21,22 @@
                                 v-for="product in wishlistItems"
                                 :key="product.id"
                             >
-                                <td>
-                                    <a
-                                        href="#"
+                                <td >
+                                    <button
+                                       
+
+                                        class="ps-btn--delete "
+                                        title="Eliminar"
+                                       
                                         @click.prevent="
                                             handleRemoveItemFromWishlist(
                                                 product
                                             )
                                         "
                                     >
-                                        <i class="icon-cross"></i>
-                                    </a>
+                                    
+                                        Eliminar 
+                                    </button>
                                 </td>
                                 <td>
                                     <product-shopping-cart :product="product" />
@@ -40,16 +45,20 @@
                                     $ {{ product.price.toFixed(2) }}
                                 </td>
                                 <td>{{ product.vendor }}</td>
-                                <td>
-                                    <a
-                                        class="ps-btn"
-                                        href="#"
+                                <td >
+                                    <button
+                                        class="ps-btn--add"
+                                        title="Agregar al carrito"
+                                       
                                         @click.prevent="
-                                            handleAddToCart(product)
+                                             handleAddToCart(
+                                                product
+                                            )
                                         "
                                     >
-                                        Add to cart
-                                    </a>
+                                    
+                                        Agregar al carrito
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>

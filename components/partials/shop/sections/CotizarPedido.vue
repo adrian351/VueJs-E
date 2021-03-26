@@ -4,12 +4,13 @@
             <div class="ps-block--armarC">
             <!-- <span>Cotiza tu pedido aqui:</span> -->
                 <div class="ps-block__btn">
-                    <nuxt-link to="/account/Cotizar">
-                        <button  >
-                            Cotizar Pedido
-                        
-                        </button>
-                    </nuxt-link> 
+                    
+                    <button  >
+                        <nuxt-link to="/account/Cotizar">
+                           <i class="icon-wallet mr-1"></i> Cotizar Pedido
+                        </nuxt-link> 
+                    </button>
+                    
                 </div>
             </div>
 

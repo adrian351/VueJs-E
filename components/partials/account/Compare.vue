@@ -29,17 +29,19 @@
                                     <td>{{ product.price }}</td>
                                     <td>{{ product.vendor }}</td>
                                     <td>
-                                        <v-btn
-                                            text
-                                            color="error"
+                                         <button
+                                            type="button"
+                                            class="btn btn-outline-danger btn-lg  active"
+                                            title="Eliminar"
+                                           
                                             @click.prevent="
                                                 handleRemoveItemFromCompareList(
                                                     product
                                                 )
                                             "
                                         >
-                                            Remove
-                                        </v-btn>
+                                          Eliminar  
+                                        </button>
                                     </td>
                                 </tr>
                             </template>

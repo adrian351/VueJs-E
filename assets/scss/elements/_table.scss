@@ -25,6 +25,16 @@
                 padding: 20px 30px;
                 border: 1px solid #ddd;
                 color: $color-text;
+
+                
+            }
+
+            .btn-add{
+                button{
+                    border-radius: 50px;
+                    background: chartreuse;
+                    
+                }
             }
         }
     }

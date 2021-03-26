@@ -8,20 +8,23 @@
                         <span> {{ $t('header.shopByDepartment') }}</span>
                     </div>
                     <div class="menu__content">
+                       
                         <menu-categories />
                     </div>
                 </div>
             </div>
             <div class="navigation__right">
+                
                 <menu-default />
                 <ul class="navigation__extra">
-                    <li>
+                    <!-- <li>
                         <nuxt-link to="/vendor/become-a-vendor">
                             {{ $t('header.navigationExtra.sellOnMartfury') }}
                         </nuxt-link>
-                    </li>
-                    <li>
+                    </li> -->
+                    <li >
                         <nuxt-link to="/account/order-tracking">
+                            <i class="icon-truck mr-1"></i>
                             {{ $t('header.navigationExtra.trackYourOrder') }}
                         </nuxt-link>
                     </li>
@@ -53,4 +56,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+   
+</style>

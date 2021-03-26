@@ -23,7 +23,8 @@
                 </li>
                 <li class="ps-block__footer">
                     <a href="#" @click.prevent="handleLogout">
-                        Cerrar sesión
+                       Cerrar sesión
+                       <i class="icon-arrow-right ml-1"></i> 
                     </a>
                 </li>
             </ul>
@@ -45,27 +46,23 @@ export default {
         return {
             accountLinks: [
                 {
-                    text: 'Account Information',
+                    text: 'Información de la cuenta',
                     url: '/account/user-information'
                 },
                 {
-                    text: 'Notifications',
+                    text: 'Notificaciones',
                     url: '/account/notifications'
                 },
                 {
-                    text: 'Invoices',
+                    text: 'Facturas',
                     url: '/account/invoices'
                 },
                 {
-                    text: 'Address',
+                    text: 'Dirección',
                     url: '/account/addresses'
                 },
                 {
-                    text: 'Recent Viewed Product',
-                    url: '/account/recent-viewed-product'
-                },
-                {
-                    text: 'Wishlist',
+                    text: 'Favoritos',
                     url: '/account/wishlist'
                 }
             ]
