@@ -7,7 +7,7 @@
         </div>
         <div class="ps-product__content">
             <nuxt-link to="/product/[pid]">
-                <a class="ps-product__title">{{ product.title }}</a>
+                <a class="ps-product__title">{{ product.name }}</a>
             </nuxt-link>
         </div>
     </div>

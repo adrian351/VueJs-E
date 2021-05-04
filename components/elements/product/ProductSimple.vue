@@ -97,7 +97,10 @@ export default {
             currency: state => state.app.currency
         }),
         baseUrl() {
-            return baseUrl;
+            return {
+                result:[]
+            }
+            // return baseUrl;
         }
     },
     data: () => ({

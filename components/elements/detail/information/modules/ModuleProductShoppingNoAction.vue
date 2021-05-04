@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="ps-product__shopping">
         <figure>
-            <figcaption>Quantity</figcaption>
+            <figcaption>Cantidad:</figcaption>
             <div class="form-group--number">
                 <button class="up">
                     <i class="fa fa-plus"></i>
@@ -13,7 +13,7 @@
             </div>
         </figure>
         <a class="ps-btn ps-btn--black" href="#">
-            Add to cart
+            Agregar al carrito
         </a>
         <a class="ps-btn" href="#">
             Buy Now

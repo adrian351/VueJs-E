@@ -2,8 +2,10 @@
     <table class="table ps-table--responsive ps-table--shopping-cart">
         <thead>
             <tr>
+
+                <!-- tabla de productos de canasta personalizada -->
                 <th>Producto</th>
-                <th>Action</th>
+                <th>Accion</th>
             </tr>
         </thead>
         <tbody>
@@ -14,7 +16,7 @@
                 <td data-label="Action">
                     <a
                         href="#"
-                        @click.prevent="handleRemoveProductFromCart(product)"
+                        @click.prevent="handleRemoveProductFromArcon(product)"
                     >
                         <i class="icon-cross"></i>
                     </a>
@@ -54,11 +56,11 @@ export default {
                 this.$store.commit('product/setCartProducts', null);
             }
         },
-        handleRemoveProductFromCart(product) {
+        handleRemoveProductFromArcon(product) {
             const cartItem = this.cartItems.find(
                 item => item.id === product.id
             );
-            this.$store.dispatch('cart/removeProductFromCart', cartItem);
+            this.$store.dispatch('cart/removeProductFromArcon', cartItem);
             this.loadCartProducts();
         }
     }

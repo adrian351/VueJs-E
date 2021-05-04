@@ -90,6 +90,9 @@ export default {
             max-width: 50%;
             padding: 0 5px;
         }
+        //  i{
+        //     font-size: 15px;
+        // }
 
         .ps-btn {
             width: 100%;

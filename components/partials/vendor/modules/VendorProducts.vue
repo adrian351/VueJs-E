@@ -32,6 +32,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- boton -> agregar a canasta personalizada -->
         <div class="ps-shopping__content">
             <div v-if="gridMode === true" class="ps-shopping-product">
                 <div class="row">
@@ -77,8 +79,6 @@ export default {
         handleAddToArcon(product){
             let item = {
                 id: product.id,
-                
-                
             };
             this.$store.dispatch('cart/addProductToArcon', item);
             this.$notify({
@@ -91,4 +91,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style  scoped></style>

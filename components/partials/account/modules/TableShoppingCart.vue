@@ -6,7 +6,7 @@
                 <th>Precio</th>
                 <th>Cantidad</th>
                 <th>Total</th>
-                <th>Action</th>
+                <th>Accion</th>
             </tr>
         </thead>
         <tbody>
@@ -63,44 +63,29 @@ export default {
     },
     methods: {
         async loadCartProducts() {
-             const cookieCart = this.$cookies.get('cart', {
-                parseJSON: true
+            const cookieCart = this.$cookies.get('cart', { parseJSON: true });
+            let queries = [];
+            cookieCart.cartItems.forEach(item => {
+                queries.push(item.id);
             });
-            if (cookieCart) {
-                const queries = getListOfProductId(cookieCart.items);
-                if (queries.length >0) {
-                    const response = await this.$store.dispatch(
-                        'product/setCartProducts',
-                        queries
-                    );
-                }
+            if (this.cartItems.length > 0) {
+                await this.$store.dispatch('product/getCartProducts', queries);
+            } else {
+                this.$store.commit('product/setCartProducts', null);
             }
-            // const cookieCart = this.$cookies.get('cart', { parseJSON: true });
-            // let queries = [];
-            // cookieCart.cartItems.forEach(item => {
-            //     queries.push(item.id);
-            // });
-            // if (this.cartItems.length > 0) {
-            //     await this.$store.dispatch('product/getCartProducts', queries);
-            // } else {
-            //     this.$store.commit('product/setCartProducts', null);
-            // }
         },
 
         handleRemoveProductFromCart(product) {
-            this.$store.dispatch('wishlist/removeItemFromWishlist', product);
-            this.loadWishlist();
+            const cartItem = this.cartItems.find(
+                item => item.id === product.id
+            );
+            this.$store.dispatch('cart/removeProductFromCart', cartItem);
             this.$notify({
                 group: 'addCartSuccess',
                 title: 'Remove Item!',
-                text: `${product.title} has been removed from your wishlist!`
-            });
-
-            // const cartItem = this.cartItems.find(
-            //     item => item.id === product.id
-            // );
-            // this.$store.dispatch('cart/removeProductFromCart', cartItem);
-            // this.loadCartProducts();
+                text: `${product.title} | se ah eliminado del carrito`
+            }); 
+            this.loadCartProducts();
         }
     }
 };

@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="ps-product__shopping">
         <figure>
-            <figcaption>Quantity</figcaption>
+            <figcaption>Cantidad:</figcaption>
             <div class="form-group--number">
                 <button class="up" @click.prevent="handleIncreaseQuantity">
                     <i class="fa fa-plus"></i>
@@ -13,7 +13,7 @@
                     v-model="quantity"
                     class="form-control"
                     type="text"
-                    disabled
+                    
                 />
             </div>
         </figure>
@@ -22,16 +22,20 @@
             href="#"
             @click.prevent="handleAddToCart"
         >
-            Add to cart
+           Agregar al carrito
         </a>
         <a class="ps-btn" href="#" @click.prevent="">
-            Buy Now
+            Comprar ahora
         </a>
         <div class="ps-product__actions">
-            <a href="#">
+            <a href="#"
+                @click.prevent="handleAddToWishlist"
+            >
                 <i class="icon-heart"></i>
             </a>
-            <a href="#">
+            <a href="#"
+                @click.prevent="handleAddToCompare"
+            >
                 <i class="icon-chart-bars"></i>
             </a>
         </div>
@@ -91,7 +95,7 @@ export default {
                     this.$notify({
                         group: 'addCartSuccess',
                         title: 'Waring!',
-                        text: `Can't add more than 10 items`
+                        text: `No se pueden agregar mas de 10 productos`
                     });
                     if (isBuyNow && isBuyNow === true) {
                         setTimeout(
@@ -115,7 +119,32 @@ export default {
             this.$notify({
                 group: 'addCartSuccess',
                 title: 'Success!',
-                text: `${this.product.title} has been added to your cart!`
+                text: `${this.product.title} | se ah ageegado al carrito!`
+            });
+        },
+
+        handleAddToWishlist() {
+            let item = {
+                id: this.product.id
+            };
+
+            this.$store.dispatch('wishlist/addItemToWishlist', item);
+            this.$notify({
+                group: 'addCartSuccess',
+                title: 'Add to wishlist!',
+                text: `${this.product.title} | se ah agregado a favoritos!`
+            });
+        },
+
+        handleAddToCompare() {
+            let item = {
+                id: this.product.id
+            };
+            this.$store.dispatch('compare/addItemToCompare', item);
+            this.$notify({
+                group: 'addCartSuccess',
+                title: 'Add to Compare!',
+                text: `${this.product.title} | se ah agregado a comparar!`
             });
         },
 

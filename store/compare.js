@@ -1,6 +1,6 @@
 export const state = () => ({
     items: [],
-    total: null,
+    total: 0,
     loading: false
 });
 
@@ -11,7 +11,7 @@ export const mutations = {
     },
 
     setItems(state, payload) {
-        if (state.total !== null) {
+        if (state.total !== 0) {
             const existItem = state.items.find(item => item.id === payload.id);
             if (!existItem) {
                 state.items.push({
@@ -30,6 +30,11 @@ export const mutations = {
         const index = state.items.findIndex(item => item.id === payload.id);
         state.total = state.total - 1;
         state.items.splice(index, 1);
+
+        if (state.items.length === 0) {
+            state.items = [];
+            state.total = 0;
+        }
     }
 };
 export const actions = {

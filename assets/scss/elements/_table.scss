@@ -82,13 +82,34 @@
 }
 
 .ps-table--compare {
-    table-layout: fixed;
+    // table-layout: fixed;
+
+    thead {
+        tr {
+            th {
+                background-color: #f2f2f2;
+                text-transform: uppercase;
+                color: $color-heading;
+                text-align: center;
+                font-weight: 600;
+                
+
+                // &:nth-child(2) {
+                //     text-align: left;
+                // }
+            }
+        }
+    }
 
     tbody {
         tr {
             td {
                 padding: 20px 30px;
                 max-width: 100px;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 18px;
+
                 .price {
                     &.sale {
                         color: $color-danger;
@@ -138,7 +159,16 @@
         tbody {
             tr {
                 td {
-                    min-width: 300px;
+                    min-width: 200px;
+                    &:first-child {
+                        max-width: 50px;
+                        min-width: 50px;
+                        text-align: center;
+                    }
+
+                    &:nth-child(2) {
+                        min-width: 300px;
+                    }
                 }
             }
         }
@@ -168,7 +198,8 @@
                 padding: 30px 10px;
                 vertical-align: middle;
                 font-size: 16px;
-
+                text-align: center;
+                font-size: 18px;
                 &:last-child {
                     text-align: right;
                 }
@@ -223,7 +254,7 @@
             td {
                 padding: 20px 10px;
                 vertical-align: middle;
-                font-size: 16px;
+                font-size: 18px;
                 .form-group--number {
                     max-width: 100px;
                     display: inline-block;

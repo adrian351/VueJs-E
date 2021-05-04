@@ -1,122 +1,179 @@
 <template lang="html">  
-  <div class="ps-form__billing-info">
-    
-        <h3 class="ps-form__heading">
-            Cotizando Pedido
-        </h3>
-
-        <div class="form-group">
-            <label>Numero de telefono<sup>*</sup></label>
-            <v-text-field
-                placeholder="phone number"
-                outlined
-                height="50"
-                type="tel"
-                required
-                
-            />
+    <div id="form" class="ps-form__billing-info">
+        
+        <!-- Formulario de cotizacion -->
+        <div class="row">
+            <div class="col-sm-6 ">
+                <div class="form-group">
+                    <label>Codigo postal:<sup>*</sup></label>
+                    <v-text-field
+                        placeholder="Postal code "
+                        outlined
+                        v-model="form.cp"
+                        height="50"
+                        type="text"   
+                    />  
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Estado</label>
+                    <v-text-field
+                        placeholder="Estado"
+                        outlined
+                        v-model="form.estado"
+                        height="50"
+                        type="text" 
+                    />
+                </div>
+            </div>
         </div>
-
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label>Nombre </label>
-                    <v-text-field
-                        placeholder="Nombre"
-                        outlined
-                        height="50"
-                        required
-                    />
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label>Apellidos </label>
-                    <v-text-field
-                        placeholder="Apellidos"
-                        outlined
-                        height="50"
-                        required
-                        
-                    />
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <label>Cantidad de arcones </label>
-                    <v-text-field
-                        placeholder="...."
-                        outlined
-                        height="50"
-                        type="number"
-                        required
-                    />
-                </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>Empresa</label>
-            <v-text-field
-                
-                placeholder="Nombre de empresa"
-                outlined
-                height="50"
-            />
-          </div>
-          <div class="form-group">
-            <v-checkbox
-                color="success"
-                label="No soy una empresa"
-               
-            />
-          </div>
-
-          <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group">
                     <label>Ciudad</label>
-                    <v-text-field placeholder="City" outlined height="50" required/>
+                    <v-text-field 
+                        placeholder="City"
+                        outlined height="50"
+                        v-model="form.ciudad" 
+                    />
                     
                 </div>
             </div>
-
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label>Código Postal</label>
-                    <v-text-field
-                        placeholder="Postal Code"
+                    <label>Colonia</label>
+                    <v-select
+                        placeholder="Colonia"
+                        v-model="form.colonia"
                         outlined
                         height="50"
-                        required
                     />
                 </div>
             </div>
-          </div>
-
-          <div class="ps-form__submit">
+        </div>
+        <div class="ps-form__submit">
             <nuxt-link to="/shop">
                 <i class="icon-arrow-left mr-1"></i>
                 Regresar 
             </nuxt-link>
+            <!-- solicitar cotizacion -->
             <div class="ps-block__btn">
-                <button  @click="handleToShipping">
+                 <button  @click.prevent="handleToShipping">
                     Solicitar cotización 
                 </button>
             </div>
         </div>
-  </div>
+    </div>
 </template>
 
 <script>
+import axios from 'axios'
+import {consultaSepomex} from '~/repositories/repo';
+
 export default {
-  name : 'Cotizar',
+    name : 'Cotizar',
 
-    
+    data(){
+        return{
+            form:{
+                cp:'',
+                estado:'',
+                municipio:'',
+                colonia:[]
+            },
+        }
+    },
 
+    created(){
+        this.getCot();
+    },
+    methods:{
+        // comunicacion con api cotizaciones
+        async getCot(){
+            const res = await axios.get('http://127.0.0.1:8000/api/cotizaciones');
+            this.result = res.data;
+            console.log(res.data);
+        },
+
+
+        handleToShipping(){
+        this.buscarCp();
+        console.log(this.form);
+        },
+    // llamada a la funcion del repo
+    async buscarCp() {
+      if (this.form.cp.length != 5) {  //si el numero de caracteres no coincide, se termia el proceso.
+        return false;
+          console.log(this.buscarCp()); 
+      }
+
+      // const repo = repo(); 
+      try {  //si el num de resultados es igual a 5, validamos los datos
+        this.cprofile = true;
+        let cp = this.form.cp;
+        let resultadoSepomex = await consultaSepomex(cp); //consulta
+        
+        if (resultadoSepomex == "Error") {
+          alertas.errorcp();
+                } else {
+          let estadosIn = resultestados(resultadoSepomex); //return estados
+          this.estados = estadosIn; //seteamos estados array
+          
+          if (
+            this.form.estado == "" ||
+            this.form.estado == null ||
+            this.form.estado != estadosIn[0]
+          ) {
+            this.form.estado = estadosIn[0]; ///damos un valor por defecto
+          }
+
+          let municipiosIn = resultMunicipios(resultadoSepomex);
+          this.municipios = municipiosIn;
+
+          if (
+            this.form.municipio == "" ||
+            this.form.municipio == null ||
+            this.form.municipio != municipiosIn[0]
+          ) {
+            this.form.municipio = municipiosIn[0];
+          }
+
+          this.colonias = resultColonias(resultadoSepomex);
+          // console.log(this.colonias);
+          if (this.form.colonia == "" || this.form.colonia == null) {
+            this.form.colonia = this.colonias[0];
+          } else {
+            let flag = true;
+            estadosIn.forEach((element) => {
+              if (element === this.form.colonia) {
+                flag = false;
+              }
+            });
+            if (flag) {
+              this.form.colonia = this.colonias[0];
+            }
+          }
+        }
+      } catch (error) {
+        this.colonias = [];
+        this.form.colonia = null;
+        this.estados = [];
+        this.form.estado = null;
+        this.municipios = null;
+        this.form.municipio = null;
+        this.errormesg =
+          "código postal inválido y/o no encontrado, Intente nuevamente";
+       }
+     
+      finally {
+        this.cprofile = false;
+      }
+      
+    }
+    } 
 }
+  
 
 
 </script>

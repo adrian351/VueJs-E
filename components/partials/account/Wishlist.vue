@@ -23,8 +23,6 @@
                             >
                                 <td >
                                     <button
-                                       
-
                                         class="ps-btn--delete "
                                         title="Eliminar"
                                        
@@ -64,6 +62,13 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="ps-section__return">
+                    <nuxt-link to="/" class="ps-btn">
+                        <i class="icon-arrow-left mr-2"></i>
+                        Regresar 
+                    </nuxt-link>
+                </div> 
             </div>
         </div>
     </div>
@@ -92,7 +97,7 @@ export default {
             this.$notify({
                 group: 'addCartSuccess',
                 title: 'Success!',
-                text: `${product.title} has been added to your cart!`
+                text: `${product.title} | ae ah agregado al carrito !`
             });
         },
         handleRemoveItemFromWishlist(product) {
@@ -101,7 +106,7 @@ export default {
             this.$notify({
                 group: 'addCartSuccess',
                 title: 'Remove Item!',
-                text: `${product.title} has been removed from your wishlist!`
+                text: `${product.title} | se ah eliminado de favoritos!`
             });
         },
         async loadWishlist() {
@@ -110,11 +115,15 @@ export default {
             });
             if (wishlistItemsOnCookie) {
                 const queries = getListOfProductId(wishlistItemsOnCookie.items);
-                if (queries.length >= 0) {
+                if (queries.length > 0) {
                     const response = await this.$store.dispatch(
                         'product/getWishlishtProducts',
                         queries
-                    );
+                    )
+                    
+                }
+                 else {
+                this.$store.commit('product/setWishlishtProducts', null);
                 }
             }
         }

@@ -20,7 +20,7 @@ export function getColletionBySlug(collections, slug) {
     }
 }
 
-export function getListOfProductId(products) {
+export function getListOfProductId(products){
     let queries = [];
     products.forEach(item => {
         queries.push(item.id);

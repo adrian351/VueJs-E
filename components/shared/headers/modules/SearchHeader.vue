@@ -12,6 +12,7 @@
             </select>
         </div>
         <div class="ps-form__input">
+            
             <input
                 v-model="searchText"
                 class="form-control"
@@ -28,7 +29,10 @@
             />
         </div>
 
-        <button>{{ $t('menu.navigationList.search') }}</button>
+        <button>
+            
+            {{ $t('menu.navigationList.search') }}<i class="icon-glasses ml-3 "></i>
+        </button>
         <div
             :class="
                 `ps-panel--search-result ${

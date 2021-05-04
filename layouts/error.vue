@@ -4,20 +4,20 @@
             <div class="ps-section__content">
                 <figure v-if="error.statusCode === 404">
                     <img src="~/static/img/404.jpg" alt="" />
-                    <h3>Ohh! No hemos encontrado esta página</h3>
+                    <h3>¡Oh! No hemos encontrado esta página</h3>
                     <p>
-                        It seems we can't find what you're looking for.
+                        Parece que no podemos encontrar lo que estás buscando.
                         <br />
-                        Go back to
-                        <a class="ps-highlight" href="/">Homepage</a>
+                        Volver a
+                        <a class="ps-highlight" href="/">Página de inicio</a>
                     </p>
                 </figure>
                 <figure v-else>
                     <p>
-                        It seems we can't find what you're looking for.
+                        Parece que no podemos encontrar lo que estás buscando.
                         <br />
-                        Go back to
-                        <a class="ps-highlight" href="/">Homepage</a>
+                        Volver a
+                        <a class="ps-highlight" href="/">Página principal</a>
                     </p>
                 </figure>
             </div>

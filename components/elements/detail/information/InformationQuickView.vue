@@ -3,7 +3,7 @@
         <h1>{{ product.title }}</h1>
         <div class="ps-product__meta">
             <p>
-                Brand:
+                Marca:
                 <nuxt-link to="/shop">
                     <a class="ml-2 text-capitalize">
                         {{ product.vendor }}
@@ -25,7 +25,7 @@
 
         <div class="ps-product__shopping">
             <figure>
-                <figcaption>Quantity</figcaption>
+                <figcaption>Cantidad:</figcaption>
                 <div class="form-group--number">
                     <button class="up">
                         <i class="fa fa-plus"></i>
@@ -46,10 +46,10 @@
                 href="#"
                 @click.prevent="handleAddToCart"
             >
-                Add to cart
+                Agregar al carrito
             </a>
             <a class="ps-btn" href="#" @click.prevent="handleBuyNow">
-                Buy Now
+                Comprar ahora
             </a>
         </div>
     </div>

@@ -2,21 +2,21 @@
     <div class="ps-compare ps-section--shopping">
         <div class="container">
             <div class="ps-section__header">
-                <h1>Compare Product</h1>
+                <h1>Comparar productos</h1>
             </div>
             <div class="ps-section__content">
                 <div class="table-responsive" id="table-compare">
-                    <table class="table">
+                    <table class="table ps-table--compare">
                         <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Vendor</th>
-                                <th>Actions</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Marca</th>
+                                <th>Accion</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <template v-if="compareItems">
+                            <template v-if="compareItems ">
                                 <tr
                                     v-for="product in compareItems"
                                     :key="product.id"
@@ -44,17 +44,34 @@
                                         </button>
                                     </td>
                                 </tr>
+                                <!-- <table-shopping-cart v-if="cartProducts !== null" />
+                                <p v-else>No hay productos</p>
+                                <div class="ps-section__cart-actions">
+                                <nuxt-link to="/shop" class="ps-btn">
+                                    <i class="icon-arrow-left mr-2"></i>
+                                Regresar a la tienda
+                                </nuxt-link> -->
+                            
                             </template>
-                            <template v-else>
+                            <!-- <template v-else>
+                                
                                 <tr>
-                                    <div></div>
+                                    <div> No hay productos</div>
                                 </tr>
-                            </template>
+                                
+                            </template>  -->
                         </tbody>
                     </table>
                 </div>
+
+                <div class="ps-section__return">
+                    <nuxt-link to="/" class="ps-btn">
+                        <i class="icon-arrow-left mr-2"></i>
+                        Regresar 
+                    </nuxt-link>
+                </div> 
             </div>
-        </div>
+         </div>
     </div>
 </template>
 
@@ -76,12 +93,12 @@ export default {
     methods: {
         handleRemoveItemFromCompareList(product) {
             this.$store.dispatch('compare/removeItemFromCompare', product);
-            this.loadCompareProducts();
-            this.$notify({
+             this.$notify({
                 group: 'addCartSuccess',
                 title: 'Remove Item!',
                 text: `${product.title} has been removed from your wishlist!`
-            });
+            }); 
+            this.loadCompareProducts();
         },
 
         async loadCompareProducts() {
@@ -95,6 +112,9 @@ export default {
                         'product/getCompareProducts',
                         queries
                     );
+                }
+                else {
+                this.$store.commit('product/setCompareProducts', null);
                 }
             }
         }

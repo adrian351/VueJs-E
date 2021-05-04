@@ -152,7 +152,7 @@ button.ps-btn {
     }
 
     &.ps-btn--black {
-        color: #fff;
+        // color: #0000;
         background-color: $color-heading;
 
         &.ps-btn--outline {
@@ -162,17 +162,18 @@ button.ps-btn {
 
             &:hover {
                 background-color: $color-heading;
-                color: #ffffff;
+                color: #0000;
             }
         }
     }
 
     &:hover,
     &:active {
-        background-color: #222;
+        background-color: rgb(17, 14, 14);
         color: #fff;
 
         &.ps-btn--black {
+            color:black;
             background-color: $color-1st;
         }
     }
@@ -216,7 +217,7 @@ button.ps-btn {
         left: 50%;
         width: 2px;
         height: 50%;
-        background-color: #9f9a98;
+        background-color: #d3450c;
         @include transform-origin(center center);
         @include transition(all 0.4s ease);
     }

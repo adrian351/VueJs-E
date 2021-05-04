@@ -2,15 +2,15 @@
     <div class="ps-section--shopping ps-shopping-cart">
         <div class="container">
             <div class="ps-section__header">
-                <h1>Shopping Cart</h1>
+                <h1>Carrito de compras</h1>
             </div>
             <div class="ps-section__content">
                 <table-shopping-cart v-if="cartProducts !== null" />
-                <p v-else>Cart empty</p>
+                <p v-else>No hay productos</p>
                 <div class="ps-section__cart-actions">
                     <nuxt-link to="/shop" class="ps-btn">
                         <i class="icon-arrow-left mr-2"></i>
-                        Back to Shop
+                        Regresar a la tienda
                     </nuxt-link>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                 <div class="row justify-content-end">
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
                         <figure>
-                            <figcaption>Coupon Discount</figcaption>
+                            <figcaption>Coupon de descuento</figcaption>
                             <div class="form-group">
                                 <input
                                     class="form-control"
@@ -28,7 +28,7 @@
                             </div>
                             <div class="form-group">
                                 <button class="ps-btn ps-btn--outline">
-                                    Apply
+                                    Aplicar
                                 </button>
                             </div>
                         </figure>
@@ -70,7 +70,7 @@
                             to="/account/checkout"
                             class="ps-btn ps-btn--fullwidth"
                         >
-                            Proceed to checkout
+                            Procesar pago
                         </nuxt-link>
                     </div>
                 </div>

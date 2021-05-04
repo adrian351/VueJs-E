@@ -2,7 +2,9 @@ import Cookies from 'js-cookie';
 import axios from 'axios';
 
 const token = Cookies.get('id_token');
-const baseDomain = 'http://45.76.97.89:3000';
+const baseDomain = 
+ 'http://127.0.0.1:8000/api';
+// 'http://45.76.97.89:3000';
 
 export const customHeaders = {
     'Content-Type': 'application/json',

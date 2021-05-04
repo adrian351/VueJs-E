@@ -47,8 +47,7 @@ export default {
         '@nuxtjs/vuetify',
         '@nuxtjs/style-resources',
         'cookie-universal-nuxt',
-        '@nuxtjs/color-mode',
-        '@nuxtjs/svg'
+            '@nuxtjs/svg'
     ],
 
     styleResources: {
