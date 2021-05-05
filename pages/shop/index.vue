@@ -4,7 +4,8 @@
         <div class="ps-container">
             
             <shop-banner />
-            <shop-brands />
+            <!-- marcas -->
+            <!-- <shop-brands /> -->
              
             
             <!-- <shop-categories /> -->
@@ -30,7 +31,7 @@ import BreadCrumb from '~/components/elements/BreadCrumb';
 import LayoutShop from '~/components/partials/shop/LayoutShop';
 import ShopWidget from '~/components/partials/shop/modules/ShopWidget';
 import ShopBanner from '~/components/partials/shop/sections/ShopBanner';
-import ShopBrands from '~/components/partials/shop/sections/ShopBrands';
+// import ShopBrands from '~/components/partials/shop/sections/ShopBrands';
 import ShopCategories from '~/components/partials/shop/sections/ShopCategories';
 import CotizarPedido from '~/components/partials/shop/sections/CotizarPedido';
 import Loading from '~/components/elements/commons/Loading';
@@ -40,7 +41,7 @@ export default {
     components: {
         Loading,
         ShopCategories,
-        ShopBrands,
+        // ShopBrands,
         ShopBanner,
         ShopWidget,
         LayoutShop,

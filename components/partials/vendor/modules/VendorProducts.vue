@@ -5,7 +5,7 @@
                 <strong>
                     {{ products ? products.length : 0 }}
                 </strong>
-                Products found
+                 Products found
             </p>
             <div class="ps-shopping__actions">
                 <select class="form-control" data-placeholder="Sort Items">

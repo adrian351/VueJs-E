@@ -11,7 +11,7 @@
                     </div>
                     <div class="ps-layout__right">
                         <div class="ps-page__header">
-                            <h1 class="text-uppercase">Shop Sidebar</h1>
+                            <h1 class="text-uppercase">Productos</h1>
                         </div>
                         <shop-sidebar-banner />
                         <shop-sidebar-best-seller

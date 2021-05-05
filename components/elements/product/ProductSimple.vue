@@ -103,6 +103,7 @@ export default {
             // return baseUrl;
         }
     },
+
     data: () => ({
         productRating: 5,
         productModal: false,
@@ -125,6 +126,8 @@ export default {
         clean(group) {
             this.$notify({ group, clean: true });
         }
+        
     }
+    
 };
 </script>

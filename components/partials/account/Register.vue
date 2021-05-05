@@ -1,8 +1,9 @@
 <template lang="html">
     <form>
         <div class="ps-form__content">
-            <h5>Register An Account</h5>
+            <h4>Regístrate</h4>
             <div class="form-group">
+                <label>Correo electrónico:</label>
                 <v-text-field
                     v-model="username"
                     :error-messages="usernameErrors"
@@ -14,10 +15,23 @@
                 />
             </div>
             <div class="form-group">
+                <label>Contraseña:</label>
                 <v-text-field
                     v-model="password"
                     :error-messages="passwordErrors"
                     @input="$v.password.$touch()"
+                    placeholder="Password"
+                    class="ps-text-field"
+                    outlined
+                    height="50"
+                />
+            </div>
+             <div class="form-group">
+                <label>Confirmar contraseña:</label>
+                <v-text-field
+                    v-model="passwordRepeat"
+                    :error-messages="passwordRepeatErrors"
+                    @input="$v.passwordRepeat.$touch()"
                     placeholder="Password"
                     class="ps-text-field"
                     outlined
@@ -30,12 +44,12 @@
                     class="ps-btn ps-btn--fullwidth"
                     @click.prevent="handleSubmit"
                 >
-                    Register
+                    Registrar
                 </button>
             </div>
         </div>
         <div class="ps-form__footer">
-            <p>Connect with:</p>
+            <p>Conectarse con:</p>
 
             <ul class="ps-list--social">
                 <li>
@@ -73,31 +87,42 @@ export default {
         usernameErrors() {
             const errors = [];
             if (!this.$v.username.$dirty) return errors;
-            !this.$v.username.required && errors.push('This field is required');
+            !this.$v.username.required && errors.push('Este campo es obligatorio');
             return errors;
         },
         passwordErrors() {
             const errors = [];
             if (!this.$v.password.$dirty) return errors;
-            !this.$v.password.required && errors.push('This field is required');
+            !this.$v.password.required && errors.push('Este campo es obligatorio');
             return errors;
+        },
+        repetPassword(){
+            const errors = [];
+            if(!this.$v.passwordRepeat.$dirty) return errors;
         }
     },
     data() {
         return {
-            username: null,
-            password: null
+            username: '',
+            password: '',
+            passwordRepeat: ''
         };
     },
     validations: {
         username: { required },
-        password: { required }
+        password: { required },
+        passwordRepeat: {required}
     },
     methods: {
         handleSubmit() {
             this.$v.$touch();
             if (!this.$v.$invalid) {
                 this.$router.push('/account/login');
+
+
+                console.log(this.username);
+                cosnole.log(this.password);
+                console.log(this.passwordRepeat);
             }
         }
     }

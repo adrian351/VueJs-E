@@ -1,8 +1,9 @@
 <template lang="html">
     <form>
         <div class="ps-form__content">
-            <h5>Log In Your Account</h5>
+            <h4>Iniciar sesion en mi cuenta</h4>
             <div class="form-group">
+                <label>Correo electronico:</label>
                 <v-text-field
                     v-model="username"
                     class="ps-text-field"
@@ -14,6 +15,7 @@
                 />
             </div>
             <div class="form-group">
+                <label>Contraseña:</label>
                 <v-text-field
                     v-model="password"
                     type="password"
@@ -27,15 +29,16 @@
             </div>
 
             <div class="form-group">
-                <v-checkbox label="Remember me" color="warning" />
+                <v-checkbox label="Recordarme" color="warning" />
             </div>
             <div class="form-group submit">
+                <p class="error" v-if="error">algo ha salido mal</p>
                 <button
                     type="submit"
                     class="ps-btn ps-btn--fullwidth"
                     @click.prevent="handleSubmit"
                 >
-                    Login
+                    Iniciar sesión
                 </button>
             </div>
         </div>
@@ -77,20 +80,21 @@ export default {
         usernameErrors() {
             const errors = [];
             if (!this.$v.username.$dirty) return errors;
-            !this.$v.username.required && errors.push('This field is required');
+            !this.$v.username.required && errors.push('Este campo es obligatorio');
             return errors;
         },
         passwordErrors() {
             const errors = [];
             if (!this.$v.password.$dirty) return errors;
-            !this.$v.password.required && errors.push('This field is required');
+            !this.$v.password.required && errors.push('Este campo es obligatorio');
             return errors;
         }
     },
     data() {
         return {
-            username: null,
-            password: null
+            username: '',
+            password: '',
+            error: false
         };
     },
     validations: {
@@ -103,6 +107,9 @@ export default {
             if (!this.$v.$invalid) {
                 this.$store.dispatch('auth/setAuthStatus', true);
                 this.$router.push('/');
+
+                console.log(this.username);
+                console.log(this.password);
             }
         }
     }

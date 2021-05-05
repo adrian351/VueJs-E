@@ -37,7 +37,7 @@ export default {
                 {
                     id: 1,
                     code: 'en',
-                    image: '/img/flag/en.png',
+                    image: '/img/flag/es.gif',
                     text: 'Español'
                 },
                

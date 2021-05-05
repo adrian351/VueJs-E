@@ -71,6 +71,7 @@ export default {
     methods: {
         handleLogout() {
             this.$store.dispatch('auth/setAuthStatus', false);
+            this.$router.push('/account/login');
         }
     }
 };

@@ -27,7 +27,7 @@
                 <figure>
                     <div>
                         <nuxt-link to="/account/shopping-cart" class="ps-btn">
-                          <i class="icon-eye mr-1"></i>
+                          <i class="icon-eye mr-2"></i>
                             {{ $t('header.miniCart.viewCart') }}
                         </nuxt-link>
                     </div>
