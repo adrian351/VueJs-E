@@ -29,9 +29,9 @@
             <div class="form-group">
                 <label>Teléfono móvil: </label>
                 <v-text-field
-                    v-model= "phone"
-                    :error-messages="phoneErrors"
-                    @input="$v.phone.$touch()"
+                    v-model= "phone_number"
+                    :error-messages="phone_numberErrors"
+                    @input="$v.phone_number.$touch()"
                     placeholder="Phone"
                     class="ps-text-field"
                     outlined
@@ -62,7 +62,7 @@
                     height="50"
                 />
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label>Confirmar contraseña:</label>
                 <v-text-field
                     v-model="passwordRepeat"
@@ -73,7 +73,7 @@
                     outlined
                     height="50"
                 />
-            </div>
+            </div> -->
             <div class="form-group submit">
                 <button
                     type="submit"
@@ -87,6 +87,7 @@
         <div class="ps-form__footer">
             <p>Canastas y Arcones</p>
         </div>
+        <!-- Servicios de inicio de sesion -->
         <!-- <div class="ps-form__footer">
             <p>Conectarse con:</p>
 
@@ -118,6 +119,7 @@
 
 <script>
 import axios from 'axios';
+import auth from '~/store/auth';
 import { email, required } from 'vuelidate/lib/validators';
 import { validationMixin } from 'vuelidate';
 
@@ -130,9 +132,8 @@ export default {
                 name:'',
                 firtsName:'',
                 email: '',
-                phone:'',
+                phone_number:'',
                 password: '',
-                passwordRepeat: ''  
            
         };
     }, 
@@ -150,12 +151,12 @@ export default {
             !this.$v.password.required && errors.push('Este campo es obligatorio');
             return errors;
         },
-        passwordRepeatErrors(){
-            const errors = [];
-            if(!this.$v.passwordRepeat.$dirty) return errors;
-            !this.$v.passwordRepeat.required && errors.push('Este campo es obligatorio');
-            return errors;
-        },
+        // passwordRepeatErrors(){
+        //     const errors = [];
+        //     if(!this.$v.passwordRepeat.$dirty) return errors;
+        //     !this.$v.passwordRepeat.required && errors.push('Este campo es obligatorio');
+        //     return errors;
+        // },
 
         firtsNameErrors(){
             const errors = [];
@@ -172,10 +173,10 @@ export default {
 
         },
 
-        phoneErrors(){
+        phone_numberErrors(){
             const errors = [];
-            if(!this.$v.phone.$dirty) return errors;
-            !this.phone.required && errors.push('Este campo es obligatorio');
+            if(!this.$v.phone_number.$dirty) return errors;
+            !this.phone_number.required && errors.push('Este campo es obligatorio');
             return errors;
         }
     },
@@ -184,9 +185,9 @@ export default {
         name:{  required },
         firtsName:{ required},
         email: { required},
-        phone: { required},
+        phone_number: { required},
         password: { required},
-        passwordRepeat: {required}
+       
     },
 
      created() {
@@ -194,23 +195,22 @@ export default {
     },
 
     methods: {
-        async  handleSubmit() {
-            this.$v.$touch();
-            if (!this.$v.$invalid) {
-                this.$router.push('/account/login');
-                this.$router.push('/');
+        // async  handleSubmit() {
+        //     this.$v.$touch();
+        //     if (!this.$v.$invalid) {
+        //         this.$router.push('/account/login');
+        //         this.$router.push('/');
 
-                console.log(this.name);
-                console.log(this.firtsName);
-                console.log(this.email);
-            // try{
-            //     await auth.register(this.datos);
-            //     this.$router.push('/');
-            //     console.log(response);
-            // }catch{
-            //     console.log(error);
-             }
-                
+        //         console.log(this.name);
+        //         console.log(this.firtsName);
+        //         console.log(this.email);
+      
+
+
+
+
+        async handleSubmit() {
+           
         },
 
        

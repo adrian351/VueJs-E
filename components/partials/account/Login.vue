@@ -22,7 +22,7 @@
                     class="ps-text-field"
                     :error-messages="passwordErrors"
                     @input="$v.password.$touch()"
-                    placeholder="Please enter password"
+                    placeholder="****"
                     height="50"
                     outlined
                 />
