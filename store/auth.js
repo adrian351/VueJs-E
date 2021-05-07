@@ -1,3 +1,7 @@
+// import axios from 'axios';
+
+// const loginApi = "https://reqres.in/api/";
+
 export const state = () => ({
     isLoggedIn: false
 });
@@ -17,7 +21,7 @@ export const actions = {
 
         this.$cookies.set('auth', cookieParams, {
             path: '/',
-            maxAge: 60 * 60 * 24 * 7
+            maxAge: 60 * 60 * 24 * 7 
         });
     }
 };

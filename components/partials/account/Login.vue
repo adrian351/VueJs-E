@@ -3,7 +3,7 @@
         <div class="ps-form__content">
             <h4>Iniciar sesion en mi cuenta</h4>
             <div class="form-group">
-                <label>Correo electronico:</label>
+                <label>Usuario:</label>
                 <v-text-field
                     v-model="username"
                     class="ps-text-field"
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="ps-form__footer">
-            <p>Connect with:</p>
+            <!-- <p>Connect with:</p>
             <ul class="ps-list--social">
                 <li>
                     <a href="#" class="facebook">
@@ -65,7 +65,7 @@
                         <i class="fa fa-instagram"></i>
                     </a>
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </form>
 </template>
