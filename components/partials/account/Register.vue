@@ -1,13 +1,13 @@
 <template lang="html">
-    <form >
+    <form id="form" method="POST">
         <div class="ps-form__content">
             <h4>Regístrate</h4>
             <div class="form-group">
                 <label>Nombre:</label>
                 <v-text-field
-                    v-model="name"
+                    v-model="form.name"
                     :error-messages="nameErrors"
-                    @input="$v.name.$touch()"
+                    @input="$v.form.name.$touch()"
                     placeholder="Nombre"
                     class="ps-text-field"
                     outlined
@@ -17,9 +17,9 @@
             <div class="form-group">
                 <label>Apellidos:</label>
                 <v-text-field
-                    v-model="firtsName"
+                    v-model="form.firtsName"
                     :error-messages="firtsNameErrors"
-                    @input="$v.firtsName.$touch()"
+                    @input="$v.form.firtsName.$touch()"
                     placeholder="Apellidos"
                     class="ps-text-field"
                     outlined
@@ -29,9 +29,9 @@
             <div class="form-group">
                 <label>Teléfono móvil: </label>
                 <v-text-field
-                    v-model= "phone_number"
+                    v-model="form.phone_number"
                     :error-messages="phone_numberErrors"
-                    @input="$v.phone_number.$touch()"
+                    @input="$v.form.phone_number.$touch()"
                     placeholder="Phone"
                     class="ps-text-field"
                     outlined
@@ -41,9 +41,9 @@
             <div class="form-group">
                 <label>Correo electrónico:</label>
                 <v-text-field
-                    v-model="email"
+                    v-model="form.email"
                     :error-messages="emailErrors"
-                    @input="$v.email.$touch()"
+                    @input="$v.form.email.$touch()"
                     placeholder="Email Address"
                     class="ps-text-field"
                     outlined
@@ -53,9 +53,9 @@
             <div class="form-group">
                 <label>Contraseña:</label>
                 <v-text-field
-                    v-model="password"
+                    v-model="form.password"
                     :error-messages="passwordErrors"
-                    @input="$v.password.$touch()"
+                    @input="$v.form.password.$touch()"
                     placeholder="****"
                     class="ps-text-field"
                     outlined
@@ -78,7 +78,7 @@
                 <button
                     type="submit"
                     class="ps-btn ps-btn--fullwidth"
-                    @click.prevent="handleSubmit"
+                    @click.prevent="register" 
                 >
                     Registrar
                 </button>
@@ -119,7 +119,7 @@
 
 <script>
 import axios from 'axios';
-import auth from '~/store/auth';
+// import auth from '~/store/auth';
 import { email, required } from 'vuelidate/lib/validators';
 import { validationMixin } from 'vuelidate';
 
@@ -128,27 +128,27 @@ export default {
 
      data() {
         return {
-            // form:{ }
+            form:{ 
                 name:'',
                 firtsName:'',
                 email: '',
                 phone_number:'',
                 password: '',
-           
+            }
         };
     }, 
 
     computed: {
         emailErrors() {
             const errors = [];
-            if (!this.$v.email.$dirty) return errors;
-            !this.$v.email.required && errors.push('Este campo es obligatorio');
+            if (!this.$v.form.email.$dirty) return errors;
+            !this.$v.form.email.required && errors.push('Este campo es obligatorio');
             return errors;
         },
         passwordErrors() {
             const errors = [];
-            if (!this.$v.password.$dirty) return errors;
-            !this.$v.password.required && errors.push('Este campo es obligatorio');
+            if (!this.$v.form.password.$dirty) return errors;
+            !this.$v.form.password.required && errors.push('Este campo es obligatorio');
             return errors;
         },
         // passwordRepeatErrors(){
@@ -160,69 +160,79 @@ export default {
 
         firtsNameErrors(){
             const errors = [];
-            if(!this.$v.firtsName.$dirty) return errors;
-            !this.$v.firtsName.required && errors.push('Este campo es obligatorio');
+            if(!this.$v.form.firtsName.$dirty) return errors;
+            !this.$v.form.firtsName.required && errors.push('Este campo es obligatorio');
              return errors;
         },
 
         nameErrors(){
             const errors = [];
-            if(!this.$v.name.$dirty) return errors;
-            !this.$v.name.required && errors.push('Este campo es obligatorio');
+            if(!this.$v.form.name.$dirty) return errors;
+            !this.$v.form.name.required && errors.push('Este campo es obligatorio');
              return errors;
 
         },
 
         phone_numberErrors(){
             const errors = [];
-            if(!this.$v.phone_number.$dirty) return errors;
-            !this.phone_number.required && errors.push('Este campo es obligatorio');
+            if(!this.$v.form.phone_number.$dirty) return errors;
+            !this.form.phone_number.required && errors.push('Este campo es obligatorio');
             return errors;
         }
     },
 
     validations: {
-        name:{  required },
-        firtsName:{ required},
-        email: { required},
-        phone_number: { required},
-        password: { required},
-       
+        form:{
+            name:           { required},
+            firtsName:      { required},
+            email:          { required},
+            phone_number:   { required},
+            password:       { required},
+        }
     },
 
-     created() {
-            this.getUser();
+    created() {
+        this.getUser();
     },
 
     methods: {
-        // async  handleSubmit() {
-        //     this.$v.$touch();
-        //     if (!this.$v.$invalid) {
-        //         this.$router.push('/account/login');
-        //         this.$router.push('/');
+        async  register() {
 
-        //         console.log(this.name);
-        //         console.log(this.firtsName);
-        //         console.log(this.email);
-      
+            let url = "http://127.0.0.1:8000/api/register";
+            try{
+                const response = await axios.post(url,this.form);
 
+                 this.$v.$touch();
+                if (!this.$v.$invalid) {
+                    this.$router.push('/account/login');
+                    this.$router.push('/');
+                    console.log(response);
+                }
+                
+            }   catch(error){
+                console.log(error);
 
+            }
 
-
-        async handleSubmit() {
-           
+            
+            console.log(this.form.name);
+            console.log(this.form.firtsName);
+            console.log(this.form.email);
+            console.log(this.form.phone_number);
+            console.log(this.form.password);
+            
+            
         },
 
-       
+
+
             // llamada a la api
         async getUser(){
-
             let res = await axios.get('http://127.0.0.1:8000/api/usuarios')
             this.result = res.data;
 
             console.log(res.data);
-        }
-        
+        }    
     }
 };
 </script>
