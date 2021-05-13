@@ -27,6 +27,7 @@ export default {
     },
     data() {
         return {
+            // menu principal
             mainMenu: [
                 {
                     icon:'icon-home mr-1',
@@ -107,7 +108,7 @@ export default {
                 },
                 {
                     text: this.$i18n.t('menu.mainMenu.pages'),
-                    url: '/',
+                    url: '/'
                     // extraClass: 'menu-item-has-children has-mega-menu',
                     // subClass: 'sub-menu',
                     // mega: 'true',
@@ -139,7 +140,7 @@ export default {
                 {
                     text: this.$i18n.t('menu.mainMenu.blogs'),
                     url: '/blog',
-                    current: 'shop',
+                    current: 'shop'
                 }
             ]
         };
@@ -147,4 +148,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

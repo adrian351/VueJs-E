@@ -33,6 +33,7 @@
                     </div>
                 </div>
             </figure>
+            
             <!--Variants-->
             <div class="ps-product__variants">
                 <div

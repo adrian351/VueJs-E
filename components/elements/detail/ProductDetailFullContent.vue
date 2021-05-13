@@ -16,7 +16,7 @@
                 <h4 v-else class="ps-product__price">${{ product.price }}</h4>
                 <div class="ps-product__shopping">
                     <figure>
-                        <figcaption>Quantity</figcaption>
+                        <figcaption>Cantidad</figcaption>
                         <div class="form-group--number">
                             <button class="up">+</button>
                             <button class="down">-</button>
@@ -29,19 +29,19 @@
                         </div>
                     </figure>
                     <a class="ps-btn ps-btn--gray" href="#">
-                        Add to cart
+                        Añadir al carrito
                     </a>
                     <a class="ps-btn" href="#">
-                        Buy Now
+                        Comprar ahora
                     </a>
                     <div class="ps-product__actions">
                         <a href="#">
                             <i class="icon-heart mr-2"></i>
-                            Add to wishlist
+                            Agregar a favoritos
                         </a>
                         <a href="#">
                             <i class="icon-chart-bars mr-2"></i>
-                            Compare
+                            Comparar
                         </a>
                     </div>
                 </div>

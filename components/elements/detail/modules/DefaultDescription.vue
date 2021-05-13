@@ -2,10 +2,10 @@
     <div class="ps-product__content">
         <v-tabs background-color="white" color="warning" class="ps-tab-list">
             <v-tab :ripple="false" tag="li">
-                <a class="list-item">Description</a>
+                <a class="list-item">Descripcion</a>
             </v-tab>
             <v-tab :ripple="false" tag="li">
-                <a class="list-item">Specificacion</a>
+                <a class="list-item">Especificacion</a>
             </v-tab>
             <v-tab :ripple="false" tag="li">
                 <a class="list-item">
@@ -19,7 +19,7 @@
                 <a class="list-item">Preguntas and Answers</a>
             </v-tab>
             <v-tab :ripple="false" tag="li">
-                <a class="list-item">More Offers</a>
+                <a class="list-item">Mas ofertas</a>
             </v-tab>
             <v-tab-item>
                 <div class="tab-content">

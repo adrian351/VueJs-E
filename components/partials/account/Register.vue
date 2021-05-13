@@ -1,5 +1,5 @@
 <template lang="html">
-    <form id="form" method="POST">
+    <form  method="POST">
         <div class="ps-form__content">
             <h4>Regístrate</h4>
             <div class="form-group">
@@ -9,11 +9,13 @@
                     :error-messages="nameErrors"
                     @input="$v.form.name.$touch()"
                     placeholder="Nombre"
+                    required
                     class="ps-text-field"
                     outlined
                     height="20"
                 />
             </div>
+            <p>{{$v.form.name}}</p>
             <div class="form-group">
                 <label>Apellidos:</label>
                 <v-text-field
@@ -26,6 +28,7 @@
                     height="20"
                 />
             </div>
+            <p>{{$v.form.firtsName}}</p>
             <div class="form-group">
                 <label>Teléfono móvil: </label>
                 <v-text-field
@@ -38,55 +41,71 @@
                     type="text"
                 />
             </div>
+            <p>{{$v.form.phone_number}}</p>
             <div class="form-group">
                 <label>Correo electrónico:</label>
                 <v-text-field
                     v-model="form.email"
                     :error-messages="emailErrors"
                     @input="$v.form.email.$touch()"
-                    placeholder="Email Address"
+                    type="email"
+                    placeholder="Email "
                     class="ps-text-field"
                     outlined
                     height="50"
                 />
             </div>
+            <p>{{$v.form.email}}</p>
             <div class="form-group">
                 <label>Contraseña:</label>
                 <v-text-field
                     v-model="form.password"
                     :error-messages="passwordErrors"
                     @input="$v.form.password.$touch()"
+                    type="password"
                     placeholder="****"
                     class="ps-text-field"
                     outlined
                     height="50"
                 />
             </div>
-            <!-- <div class="form-group">
+            <p>{{$v.form.password}}</p>
+            <div class="form-group">
                 <label>Confirmar contraseña:</label>
                 <v-text-field
-                    v-model="passwordRepeat"
+                    v-model="form.passwordRepeat"
                     :error-messages="passwordRepeatErrors"
-                    @input="$v.passwordRepeat.$touch()"
+                    @input="$v.form.passwordRepeat.$touch()"
+                    type="password"
                     placeholder="****"
                     class="ps-text-field"
                     outlined
                     height="50"
                 />
-            </div> -->
+            </div>
+            <p>{{$v.form.passwordRepeat}}</p>
             <div class="form-group submit">
                 <button
                     type="submit"
                     class="ps-btn ps-btn--fullwidth"
                     @click.prevent="register" 
+                    
                 >
                     Registrar
                 </button>
+
             </div>
         </div>
-        <div class="ps-form__footer">
-            <p>Canastas y Arcones</p>
+        <div class="ps-form__footer"> 
+           
+            <p class="msg">
+                ¿Yatienes cuenta?
+                <nuxt-link to="Login">Inicia sesion</nuxt-link>
+            </p>
+           
         </div>
+
+        
         <!-- Servicios de inicio de sesion -->
         <!-- <div class="ps-form__footer">
             <p>Conectarse con:</p>
@@ -120,7 +139,7 @@
 <script>
 import axios from 'axios';
 // import auth from '~/store/auth';
-import { email, required } from 'vuelidate/lib/validators';
+import { email, required, sameAs, minLength } from 'vuelidate/lib/validators';
 import { validationMixin } from 'vuelidate';
 
 export default {
@@ -134,11 +153,33 @@ export default {
                 email: '',
                 phone_number:'',
                 password: '',
+                passwordRepeat: ''
             }
         };
     }, 
 
     computed: {
+         nameErrors(){
+            const errors = [];
+            if(!this.$v.form.name.$dirty) return errors;
+            !this.$v.form.name.required && errors.push('Este campo es obligatorio');
+             return errors;
+
+        },
+         firtsNameErrors(){
+            const errors = [];
+            if(!this.$v.form.firtsName.$dirty) return errors;
+            !this.$v.form.firtsName.required && errors.push('Este campo es obligatorio');
+             return errors;
+        },
+
+        
+        phone_numberErrors(){
+            const errors = [];
+            if(!this.$v.form.phone_number.$dirty) return errors;
+            !this.form.phone_number.required && errors.push('Este campo es obligatorio');
+            return errors;
+        },
         emailErrors() {
             const errors = [];
             if (!this.$v.form.email.$dirty) return errors;
@@ -148,46 +189,25 @@ export default {
         passwordErrors() {
             const errors = [];
             if (!this.$v.form.password.$dirty) return errors;
-            !this.$v.form.password.required && errors.push('Este campo es obligatorio');
+            !this.$v.form.password.required && errors.push('Este campo es obligatorio (minimo 8 caracteres))');
             return errors;
         },
-        // passwordRepeatErrors(){
-        //     const errors = [];
-        //     if(!this.$v.passwordRepeat.$dirty) return errors;
-        //     !this.$v.passwordRepeat.required && errors.push('Este campo es obligatorio');
-        //     return errors;
-        // },
-
-        firtsNameErrors(){
+        passwordRepeat(){
             const errors = [];
-            if(!this.$v.form.firtsName.$dirty) return errors;
-            !this.$v.form.firtsName.required && errors.push('Este campo es obligatorio');
-             return errors;
-        },
-
-        nameErrors(){
-            const errors = [];
-            if(!this.$v.form.name.$dirty) return errors;
-            !this.$v.form.name.required && errors.push('Este campo es obligatorio');
-             return errors;
-
-        },
-
-        phone_numberErrors(){
-            const errors = [];
-            if(!this.$v.form.phone_number.$dirty) return errors;
-            !this.form.phone_number.required && errors.push('Este campo es obligatorio');
+            if(!this.$v.form.passwordRepeat.$dirty) return errors;
+            !this.$v.form.passwordRepeat.required && errors.push('Este campo es obligatorio (minimo 8 caracteres))' );
             return errors;
-        }
+         }
     },
 
     validations: {
         form:{
-            name:           { required},
-            firtsName:      { required},
-            email:          { required},
-            phone_number:   { required},
-            password:       { required},
+            name:{ required},
+            firtsName:{ required},
+            email: { required, email},
+            phone_number:{required},
+            password:{required: minLength(8) },
+            passwordRepeat: {required: minLength(8)}
         }
     },
 
@@ -197,8 +217,7 @@ export default {
 
     methods: {
         async  register() {
-
-            let url = "http://127.0.0.1:8000/api/register";
+           let url = "http://127.0.0.1:8000/api/register";
             try{
                 const response = await axios.post(url,this.form);
 
@@ -211,16 +230,14 @@ export default {
                 
             }   catch(error){
                 console.log(error);
-
             }
-
             
             console.log(this.form.name);
             console.log(this.form.firtsName);
             console.log(this.form.email);
             console.log(this.form.phone_number);
-            console.log(this.form.password);
-            
+            console.log(this.form.password);    
+            console.log(this.form.passwordRepeat);
             
         },
 
@@ -237,4 +254,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.msg {
+  margin-top: 3rem;
+  text-align: center;
+}
+</style>

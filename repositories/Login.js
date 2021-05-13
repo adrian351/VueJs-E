@@ -1,6 +1,6 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-const apiLogin = 'http://127.0.0.1:8000/api';
+// const apiLogin = 'http://127.0.0.1:8000/api';
 
 // export default{
     
@@ -11,12 +11,12 @@ const apiLogin = 'http://127.0.0.1:8000/api';
 //     }
 // }
 
-export const Registrar = ()=>{
-    let datos = {
-        name, firtsName, emailo, password, passwordRepeat
-    };
+// export const Registrar = ()=>{
+//     let datos = {
+//         name, firtsName, emailo, password, passwordRepeat
+//     };
 
-    let user = {datos};
+//     let user = {datos};
 
-    return axios.post(apiLogin + "datos", user)
-}
+//     return axios.post(apiLogin + "datos", user)
+// }

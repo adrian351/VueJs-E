@@ -96,7 +96,7 @@ export default {
              this.$notify({
                 group: 'addCartSuccess',
                 title: 'Remove Item!',
-                text: `${product.title} has been removed from your wishlist!`
+                text: `${product.title} has been removed from to compare!`
             }); 
             this.loadCompareProducts();
         },

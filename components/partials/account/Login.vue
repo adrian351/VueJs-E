@@ -1,5 +1,5 @@
 <template lang="html">
-    <form>
+    <form method="POST">
         <div class="ps-form__content">
             <h4>Iniciar sesion en mi cuenta</h4>
             <div class="form-group">
@@ -7,13 +7,15 @@
                 <v-text-field
                     v-model="username"
                     class="ps-text-field"
-                    :error-messages="usernameErrors"
+                    :error-messages="nameErrors"
                     @input="$v.username.$touch()"
+                    type="text"
                     placeholder="Usernamer or email"
                     height="50"
                     outlined
-                />
+                />  
             </div>
+            <p>{{$v.username}}</p>
             <div class="form-group">
                 <label>Contraseña:</label>
                 <v-text-field
@@ -27,7 +29,7 @@
                     outlined
                 />
             </div>
-
+            <p>{{$v.password}}</p>
             <div class="form-group">
                 <v-checkbox label="Recordarme" color="warning" />
             </div>
@@ -36,13 +38,17 @@
                 <button
                     type="submit"
                     class="ps-btn ps-btn--fullwidth"
-                    @click.prevent="handleSubmit"
+                    @click.prevent="handleSubmitLogin"
                 >
                     Iniciar sesión
                 </button>
             </div>
         </div>
         <div class="ps-form__footer">
+            <p class="msg">
+            ¿No tienes cuenta?
+                <nuxt-link to="Register">Registrate</nuxt-link>
+            </p>
             <!-- <p>Connect with:</p>
             <ul class="ps-list--social">
                 <li>
@@ -71,6 +77,8 @@
 </template>
 
 <script>
+
+import axios from 'axios';
 import { email, required } from 'vuelidate/lib/validators';
 import { validationMixin } from 'vuelidate';
 
@@ -88,7 +96,10 @@ export default {
             if (!this.$v.password.$dirty) return errors;
             !this.$v.password.required && errors.push('Este campo es obligatorio');
             return errors;
+            console.log(error);
         }
+
+        
     },
     data() {
         return {
@@ -98,22 +109,40 @@ export default {
         };
     },
     validations: {
+        
         username: { required },
         password: { required }
     },
     methods: {
-        handleSubmit() {
-            this.$v.$touch();
-            if (!this.$v.$invalid) {
-                this.$store.dispatch('auth/setAuthStatus', true);
-                this.$router.push('/');
+        async handleSubmitLogin() {
+            let url ="http://127.0.0.1:8000/api/login";
 
-                console.log(this.username);
-                console.log(this.password);
+            
+            try{
+                const response = await axios.post(url, this.username, this.password);
+                console.log(response);
+
+                this.$v.$touch();
+                if (!this.$v.$invalid) {
+                    this.$store.dispatch('auth/setAuthStatus', true);
+                    this.$router.push('/');
+                    
+                }
+            }catch(error){
+                // this.error = true;
+                console.log(error);
             }
+
+            console.log(this.username);
+            console.log(this.password);
         }
     }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.msg {
+  margin-top: 3rem;
+  text-align: center;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-    <li class=" menu-item-has-children has-mega-menu">
+    <li class="menu-item-has-children has-mega-menu">
         <nuxt-link :to="localePath(menuData.url)">
             {{ menuData.text }}
         </nuxt-link>
