@@ -16,7 +16,7 @@
                     Login
                 </nuxt-link>
                 <nuxt-link to="/account/register">
-                    Register
+                    Registro
                 </nuxt-link>
             </div>
         </div>

@@ -12,7 +12,7 @@
                         </li>
                         <li class="active">
                             <nuxt-link to="/account/register">
-                                Register
+                                Registro
                             </nuxt-link>
                         </li>
                     </ul>

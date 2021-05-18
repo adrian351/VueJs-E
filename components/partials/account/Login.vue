@@ -5,17 +5,17 @@
             <div class="form-group">
                 <label>Usuario:</label>
                 <v-text-field
-                    v-model="username"
+                    v-model="email"
                     class="ps-text-field"
-                    :error-messages="nameErrors"
-                    @input="$v.username.$touch()"
-                    type="text"
-                    placeholder="Usernamer or email"
+                    :error-messages="emailErrors"
+                    @input="$v.email.$touch()"
+                    type="email"
+                    placeholder="Username or email"
                     height="50"
                     outlined
                 />  
             </div>
-            <p>{{$v.username}}</p>
+            
             <div class="form-group">
                 <label>Contraseña:</label>
                 <v-text-field
@@ -29,7 +29,7 @@
                     outlined
                 />
             </div>
-            <p>{{$v.password}}</p>
+            
             <div class="form-group">
                 <v-checkbox label="Recordarme" color="warning" />
             </div>
@@ -38,7 +38,8 @@
                 <button
                     type="submit"
                     class="ps-btn ps-btn--fullwidth"
-                    @click.prevent="handleSubmitLogin"
+                    @click.prevent="submitLogin"
+                    
                 >
                     Iniciar sesión
                 </button>
@@ -79,16 +80,17 @@
 <script>
 
 import axios from 'axios';
-import { email, required } from 'vuelidate/lib/validators';
+// import auth from '~/store/auth';
+import { email, required, minLength } from 'vuelidate/lib/validators';
 import { validationMixin } from 'vuelidate';
 
 export default {
     name: 'Login',
     computed: {
-        usernameErrors() {
+        emailErrors() {
             const errors = [];
-            if (!this.$v.username.$dirty) return errors;
-            !this.$v.username.required && errors.push('Este campo es obligatorio');
+            if (!this.$v.email.$dirty) return errors;
+            !this.$v.email.required && errors.push('Este campo es obligatorio');
             return errors;
         },
         passwordErrors() {
@@ -96,47 +98,61 @@ export default {
             if (!this.$v.password.$dirty) return errors;
             !this.$v.password.required && errors.push('Este campo es obligatorio');
             return errors;
-            console.log(error);
-        }
 
-        
+            // console.log(errors);
+        } 
     },
     data() {
         return {
-            username: '',
+            email: '',
             password: '',
             error: false
         };
     },
     validations: {
-        
-        username: { required },
-        password: { required }
+        email: { required, email },
+        password: {
+             required,
+             minLength: minLength(8) }
     },
     methods: {
-        async handleSubmitLogin() {
-            let url ="http://127.0.0.1:8000/api/login";
-
-            
+        async submitLogin() {
+            console.log("loggin");
+            let user = {
+                email: this.email,
+                password: this.password
+            }
+            console.log(user)
+            let url = 'http://127.0.0.1:8000/api/auth/login'
             try{
-                const response = await axios.post(url, this.username, this.password);
-                console.log(response);
+                const response = await axios.post(url, user).then((res) => {    
+                    this.result = res.data,
+
+                    console.log( res.data),
+                    console.log(response)
+                })
 
                 this.$v.$touch();
                 if (!this.$v.$invalid) {
                     this.$store.dispatch('auth/setAuthStatus', true);
                     this.$router.push('/');
                     
-                }
+                //     console.log(response);
+                    console.log('token generado');
+                 }
+                // else{
+                //     console.log('Los campos son correctos');
+                //     console.log(this.$v);
+                //  }
             }catch(error){
-                // this.error = true;
+                 // this.error = true;
                 console.log(error);
             }
 
-            console.log(this.username);
-            console.log(this.password);
         }
+        
     }
+    
 };
 </script>
 

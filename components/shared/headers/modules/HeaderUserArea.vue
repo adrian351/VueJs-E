@@ -24,7 +24,7 @@
                 <li class="ps-block__footer">
                     <a href="#" @click.prevent="handleLogout">
                        Cerrar sesión
-                       <i class="icon-arrow-right ml-1"></i> 
+                       <!-- <i class="icon-arrow-right ml-1"></i>  -->
                     </a>
                 </li>
             </ul>
