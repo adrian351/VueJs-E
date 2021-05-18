@@ -25,17 +25,16 @@
                                 <div class="col-md-6 col-12">
                                     <figure class="ps-block--address">
                                         <figcaption>
-                                            Billing address
+                                            Dirección de Envio
                                         </figcaption>
                                         <div class="ps-block__content">
                                             <p>
-                                                You Have Not Set Up This Type Of
-                                                Address Yet.
+                                                No ha configurado este tipo de dirección todavía
                                             </p>
                                             <nuxt-link
                                                 to="/account/edit-address"
                                             >
-                                                <a>Edit</a>
+                                                <a>Editar</a>
                                             </nuxt-link>
                                         </div>
                                     </figure>
@@ -43,17 +42,18 @@
                                 <div class="col-md-6 col-12">
                                     <figure class="ps-block--address">
                                         <figcaption>
-                                            Shipping address
+                                             Dirección de Envío
                                         </figcaption>
                                         <div class="ps-block__content">
                                             <p>
-                                                You Have Not Set Up This Type Of
-                                                Address Yet.
+                                              
+                                                No ha configurado este tipo de
+                                                Dirección todavía.
                                             </p>
                                             <nuxt-link
                                                 to="/account/edit-address"
                                             >
-                                                <a>Edit</a>
+                                                <a>Editar</a>
                                             </nuxt-link>
                                         </div>
                                     </figure>

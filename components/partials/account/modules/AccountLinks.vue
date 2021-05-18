@@ -10,7 +10,7 @@
         </template>
         <li>
             <nuxt-link to="/account/my-account">
-                <a>
+                <a @click.prevent="handleLogout">
                     <i class="icon-power-switch"></i>
                     Logout
                 </a>
@@ -20,12 +20,27 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     name: 'AccountLinks',
     props: {
         links: {
             type: Array,
             default: () => []
+        }
+    },
+
+    computed: {
+        ...mapState({
+            isLoggedIn: state => state.auth.isLoggedIn
+        })
+    },
+
+    methods: {
+        handleLogout() {
+            this.$store.dispatch('auth/setAuthStatus', false);
+            this.$router.push('/account/login');
         }
     }
 };

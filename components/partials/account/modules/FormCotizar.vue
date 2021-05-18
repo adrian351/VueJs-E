@@ -59,7 +59,7 @@
             </nuxt-link>
             <!-- solicitar cotizacion -->
             <div class="ps-block__btn">
-                 <button  @click.prevent="handleToShipping">
+                 <button  @click.prevent="handleToCotizacion">
                     Solicitar cotización 
                 </button>
             </div>
@@ -96,10 +96,30 @@ export default {
             console.log(res.data);
         },
 
-        handleToShipping(){
-        this.buscarCp();
-        console.log(this.form);
+        // enviar datos de cotizacion
+        async handleToCotizacion(){
+          // try{
+          //   const response = await axios.post('http://127.0.0.1:8000/api/cotizaciones', this.form).then((res) => {
+            // this.result = res.data,
+           this.buscarCp();
+          //   console.log(res.data);
+          //   console.log(response)
+            
+          
+          // });
+          // // imprimir res apiSepomex
+          console.log(this.form);
+          
+          // }catch(error){
+          //   console.log(error)
+          // }
         },
+
+
+    // resultado apiSepomex
+    // this.buscarCp();
+
+
     // llamada a la funcion del repo
     async buscarCp() {
       if (this.form.cp.length != 5) {  //si el numero de caracteres no coincide, se termia el proceso.

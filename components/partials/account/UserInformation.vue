@@ -32,6 +32,7 @@
 
 <script>
 import AccountLinks from './modules/AccountLinks';
+import axios from 'axios';
 export default {
     name: 'UserInformation',
     components: { AccountLinks },
@@ -71,7 +72,23 @@ export default {
                 }
             ]
         };
+    },
+
+    created(){
+        this.getUserProfile()
+    },
+
+    methods:{
+        async getUserProfile(){
+            const response = await axios.get('http://127.0.0.1:8000/api/auth/user-profile').then((res) =>{
+                this.result = res.data,
+
+                console.log(response);
+                console.log(res.data);
+            });
+        }
     }
+    
 };
 </script>
 

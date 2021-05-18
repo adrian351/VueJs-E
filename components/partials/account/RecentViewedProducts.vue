@@ -9,7 +9,7 @@
                                 <img src="/img/users/3.jpg" />
                                 <figure>
                                     <figcaption>Hello</figcaption>
-                                    <p>{{}}</p>
+                                    <p>nombre usuario</p>
                                 </figure>
                             </div>
                             <div class="ps-widget__content">
