@@ -27,13 +27,13 @@
                 <figure>
                     <div>
                         <nuxt-link to="/account/shopping-cart" class="ps-btn">
-                          <i class="icon-eye mr-2"></i>
+                          <i class="icon-bag2 mr-2"></i>
                             {{ $t('header.miniCart.viewCart') }}
                         </nuxt-link>
                     </div>
                     <div>
                         <nuxt-link to="/account/checkout" class="ps-btn">
-                        <i class="icon-bag2 mr-4"></i>
+                        <i class="icon-pen mr-2"></i>
                             {{ $t('header.miniCart.checkout') }}
                         </nuxt-link>
                     </div>
@@ -95,7 +95,7 @@ export default {
         // }
 
         .ps-btn {
-            width: 100%;
+            width: 85%;
             text-align: center;
         }
     }

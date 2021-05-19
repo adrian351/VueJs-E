@@ -12,7 +12,7 @@
             <nuxt-link to="/account/my-account">
                 <a @click.prevent="handleLogout">
                     <i class="icon-power-switch"></i>
-                    Logout
+                    Salir
                 </a>
             </nuxt-link>
         </li>
@@ -37,6 +37,7 @@ export default {
         })
     },
 
+    // cerrar sesion
     methods: {
         handleLogout() {
             this.$store.dispatch('auth/setAuthStatus', false);

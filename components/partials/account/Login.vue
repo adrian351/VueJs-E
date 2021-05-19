@@ -15,7 +15,6 @@
                     outlined
                 />  
             </div>
-            
             <div class="form-group">
                 <label>Contraseña:</label>
                 <v-text-field
@@ -29,7 +28,6 @@
                     outlined
                 />
             </div>
-            
             <div class="form-group">
                 <v-checkbox label="Recordarme" color="warning" />
             </div>
@@ -38,8 +36,7 @@
                 <button
                     type="submit"
                     class="ps-btn ps-btn--fullwidth"
-                    @click.prevent="submitLogin"
-                    
+                    @click.prevent="submitLogin"   
                 >
                     Iniciar sesión
                 </button>
@@ -136,23 +133,15 @@ export default {
                 if (!this.$v.$invalid) {
                     this.$store.dispatch('auth/setAuthStatus', true);
                     this.$router.push('/');
-                    
-                //     console.log(response);
+                
                     console.log('token generado');
-                 }
-                // else{
-                //     console.log('Los campos son correctos');
-                //     console.log(this.$v);
-                //  }
+                }
             }catch(error){
                  // this.error = true;
                 console.log(error);
             }
-
-        }
-        
-    }
-    
+        } 
+    } 
 };
 </script>
 

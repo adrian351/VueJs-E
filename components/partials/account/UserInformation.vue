@@ -8,7 +8,7 @@
                             <div class="ps-widget__header">
                                 <img src="/img/users/3.jpg" />
                                 <figure>
-                                    <figcaption>Hello</figcaption>
+                                    <figcaption>Hola</figcaption>
                                     <p>username@gmail.com</p>
                                 </figure>
                             </div>
@@ -40,33 +40,33 @@ export default {
         return {
             accountLinks: [
                 {
-                    text: 'Account Information',
+                    text: 'Información de mi cuenta',
                     url: '/account/user-information',
-                    icon: 'icon-user'
+                    icon: 'icon-user',
                 },
                 {
-                    text: 'Notifications',
+                    text: 'Notificaciones',
                     url: '/account/notifications',
                     icon: 'icon-alarm-ringing'
                 },
                 {
-                    text: 'Invoices',
+                    text: 'Facturas',
                     url: '/account/invoices',
                     icon: 'icon-papers'
                 },
                 {
-                    text: 'Address',
+                    text: ' Direccion de envio',
                     url: '/account/addresses',
                     icon: 'icon-map-marker'
                 },
                 {
-                    text: 'Recent Viewed Product',
+                    text: 'Producto visto recientemente',
                     url: '/account/recent-viewed-product',
                     icon: 'icon-store',
                     active: true
                 },
                 {
-                    text: 'Wishlist',
+                    text: 'Favoritos',
                     url: '/account/wishlist',
                     icon: 'icon-heart'
                 }
@@ -74,6 +74,7 @@ export default {
         };
     },
 
+    // obtener datos del usurio auntenticado
     created(){
         this.getUserProfile()
     },

@@ -38,34 +38,34 @@ export default {
     data() {
         return {
             accountLinks: [
-                {
-                    text: 'Account Information',
+               {
+                    text: 'Información de mi cuenta',
                     url: '/account/user-information',
-                    icon: 'icon-user'
+                    icon: 'icon-user',
                 },
                 {
-                    text: 'Notifications',
+                    text: 'Notificaciones',
                     url: '/account/notifications',
                     icon: 'icon-alarm-ringing'
                 },
                 {
-                    text: 'Invoices',
+                    text: 'Facturas',
                     url: '/account/invoices',
                     icon: 'icon-papers'
                 },
                 {
-                    text: 'Address',
+                    text: ' Direccion de envio',
                     url: '/account/addresses',
                     icon: 'icon-map-marker'
                 },
                 {
-                    text: 'Recent Viewed Product',
+                    text: 'Producto visto recientemente',
                     url: '/account/recent-viewed-product',
                     icon: 'icon-store',
                     active: true
                 },
                 {
-                    text: 'Wishlist',
+                    text: 'Favoritos',
                     url: '/account/wishlist',
                     icon: 'icon-heart'
                 }

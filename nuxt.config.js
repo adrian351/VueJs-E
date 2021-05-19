@@ -13,7 +13,7 @@ export default {
                 hid: 'description',
                 name: 'description',
                 content:
-                    'Martfury - Multipurpose Marketplace Vuejs Ecommerce Template'
+                    'Canastas y Arcones - Multipurpose Marketplace Vuejs Ecommerce Template'
             }
         ],
         link: [

@@ -13,7 +13,12 @@
         </div>
     </div>
     <div v-else class="ps-block--user-account">
-        <i class="icon-user"></i>
+        <div class="ps-block__left">
+            <i class="icon-user"></i>
+        </div>
+        <div class="ps-block__right">
+            <nuxt-link to='/account/user-information'> {{user.name}} |</nuxt-link>   
+        </div>
         <div class="ps-block__content">
             <ul class="ps-list--arrow">
                 <li v-for="link in accountLinks" :key="link.text">
@@ -39,7 +44,8 @@ export default {
     name: 'HeaderUserArea',
     computed: {
         ...mapState({
-            isLoggedIn: state => state.auth.isLoggedIn
+            isLoggedIn: state => state.auth.isLoggedIn,
+            user:      state => state.auth.user
         })
     },
     data() {

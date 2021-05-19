@@ -36,7 +36,7 @@
                     placeholder="Phone"
                     class="ps-text-field"
                     outlined
-                   
+                    type="tel"
                 />
             </div>
             <div class="form-group">
@@ -201,6 +201,7 @@ export default {
     created() {
         this.getUser();
     },
+    // registrar usuarios
     methods: {
         async  register() {
            let url = "http://127.0.0.1:8000/api/auth/register";

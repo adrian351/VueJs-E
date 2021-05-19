@@ -7,7 +7,8 @@ const apiLogin = "https://127.0.0.1:8000/api/auth/";
 
 export const state = () =>({
     isLoggedIn  : false,
-    userLoggedIn : ''
+    userLoggedIn : '',
+    user: null
 });
 
 export const mutations = {
@@ -17,6 +18,10 @@ export const mutations = {
     setUserLogged(userLogged) {
         Cookies.set("userLogged", userLogged);
    },
+
+   LogOut(state){
+        state.user = null
+   }
    
 }
 export  const actions = {  
@@ -54,8 +59,25 @@ export  const actions = {
         console.log(res.data)
         console.log(resultado)
         })
+    },
+
+    async LogOut({commit}){
+        let user = null
+        commit('logout', user)
     }
 };
+
+export const getters = {
+    setAuthStatus: state => !!state.isLoggedIn
+};
+
+
+export default  {
+    state, 
+    getters,
+    actions,
+    mutations
+}
 
 
 //  export const state = () => ({
